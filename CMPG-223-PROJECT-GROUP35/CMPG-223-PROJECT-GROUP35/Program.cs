@@ -16,7 +16,7 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLogIn());
         }
     }
 }

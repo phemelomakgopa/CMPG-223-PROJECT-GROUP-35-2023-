@@ -1,0 +1,1 @@
+select name 'file name', physical_name 'file location' from sys.master_files

@@ -7,14 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPG_223_PROJECT_GROUP35
 {
-    public partial class Form1 : Form
+    public partial class frmLogIn : Form
     {
-        public Form1()
+        public frmLogIn()
         {
             InitializeComponent();
+        }
+
+        string conStr = @"Data Source=.\SQLEXPRESS01;Initial Catalog=LEHLABILE HOTEL DB;Integrated Security=True";
+        SqlConnection conn;
+        SqlCommand cmd;
+        SqlDataAdapter adap;
+        DataSet ds;
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            conn = new SqlConnection(conStr);
+
+            conn.Open();
+            conn.Close();
+
+            MessageBox.Show("Succesfully connected");
+
         }
     }
 }
