@@ -24,6 +24,9 @@ namespace CMPG_223_PROJECT_GROUP35
         SqlDataAdapter adap;
         DataSet ds;
 
-       
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Lehlabile letsatsi");
+        }
     }
 }
