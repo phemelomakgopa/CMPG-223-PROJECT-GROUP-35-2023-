@@ -26,7 +26,8 @@ namespace CMPG_223_PROJECT_GROUP35
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Lehlabile letsatsi");
+            MessageBox.Show("With great power comes great resposibility. I am also batman");
+
         }
     }
 }
