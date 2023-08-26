@@ -29,79 +29,32 @@ namespace CMPG_223_PROJECT_GROUP35
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.existingGB = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.cbChangeGuestInfo = new System.Windows.Forms.CheckBox();
+            this.cbBookings = new System.Windows.Forms.CheckBox();
+            this.rdoNewGuest = new System.Windows.Forms.RadioButton();
+            this.rdoExGuest = new System.Windows.Forms.RadioButton();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.txtGuestPhoneNum = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.existingGB.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // existingGB
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(33, 125);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(411, 200);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Exisiting Guests";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(32, 36);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(98, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "New Guest";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(33, 74);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(119, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Existing Guest";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(299, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 58);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(27, 54);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(160, 21);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Proceed to bookings";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(30, 111);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(168, 21);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Change Guest Details";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.existingGB.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.existingGB.Controls.Add(this.label1);
+            this.existingGB.Controls.Add(this.txtGuestPhoneNum);
+            this.existingGB.Controls.Add(this.label2);
+            this.existingGB.Controls.Add(this.cbChangeGuestInfo);
+            this.existingGB.Controls.Add(this.cbBookings);
+            this.existingGB.Location = new System.Drawing.Point(33, 125);
+            this.existingGB.Name = "existingGB";
+            this.existingGB.Size = new System.Drawing.Size(411, 200);
+            this.existingGB.TabIndex = 0;
+            this.existingGB.TabStop = false;
+            this.existingGB.Text = "Exisiting Guests";
             // 
             // label2
             // 
@@ -111,19 +64,87 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 2;
             // 
+            // cbChangeGuestInfo
+            // 
+            this.cbChangeGuestInfo.AutoSize = true;
+            this.cbChangeGuestInfo.Location = new System.Drawing.Point(30, 111);
+            this.cbChangeGuestInfo.Name = "cbChangeGuestInfo";
+            this.cbChangeGuestInfo.Size = new System.Drawing.Size(168, 21);
+            this.cbChangeGuestInfo.TabIndex = 1;
+            this.cbChangeGuestInfo.Text = "Change Guest Details";
+            this.cbChangeGuestInfo.UseVisualStyleBackColor = true;
+            // 
+            // cbBookings
+            // 
+            this.cbBookings.AutoSize = true;
+            this.cbBookings.Location = new System.Drawing.Point(27, 54);
+            this.cbBookings.Name = "cbBookings";
+            this.cbBookings.Size = new System.Drawing.Size(160, 21);
+            this.cbBookings.TabIndex = 0;
+            this.cbBookings.Text = "Proceed to bookings";
+            this.cbBookings.UseVisualStyleBackColor = true;
+            // 
+            // rdoNewGuest
+            // 
+            this.rdoNewGuest.AutoSize = true;
+            this.rdoNewGuest.Location = new System.Drawing.Point(32, 36);
+            this.rdoNewGuest.Name = "rdoNewGuest";
+            this.rdoNewGuest.Size = new System.Drawing.Size(98, 21);
+            this.rdoNewGuest.TabIndex = 0;
+            this.rdoNewGuest.TabStop = true;
+            this.rdoNewGuest.Text = "New Guest";
+            this.rdoNewGuest.UseVisualStyleBackColor = true;
+            // 
+            // rdoExGuest
+            // 
+            this.rdoExGuest.AutoSize = true;
+            this.rdoExGuest.Location = new System.Drawing.Point(33, 74);
+            this.rdoExGuest.Name = "rdoExGuest";
+            this.rdoExGuest.Size = new System.Drawing.Size(119, 21);
+            this.rdoExGuest.TabIndex = 1;
+            this.rdoExGuest.TabStop = true;
+            this.rdoExGuest.Text = "Existing Guest";
+            this.rdoExGuest.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(299, 354);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(145, 58);
+            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            // 
+            // txtGuestPhoneNum
+            // 
+            this.txtGuestPhoneNum.Location = new System.Drawing.Point(243, 91);
+            this.txtGuestPhoneNum.Name = "txtGuestPhoneNum";
+            this.txtGuestPhoneNum.Size = new System.Drawing.Size(120, 22);
+            this.txtGuestPhoneNum.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(223, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(168, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Guest Phone Number:";
+            // 
             // FormNewExisting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 435);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.existingGB);
+            this.Controls.Add(this.rdoExGuest);
+            this.Controls.Add(this.rdoNewGuest);
             this.Name = "FormNewExisting";
-            this.Text = "Form4";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Text = "New or Existing";
+            this.existingGB.ResumeLayout(false);
+            this.existingGB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,12 +152,14 @@ namespace CMPG_223_PROJECT_GROUP35
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox existingGB;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox cbChangeGuestInfo;
+        private System.Windows.Forms.CheckBox cbBookings;
+        private System.Windows.Forms.RadioButton rdoNewGuest;
+        private System.Windows.Forms.RadioButton rdoExGuest;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtGuestPhoneNum;
     }
 }
