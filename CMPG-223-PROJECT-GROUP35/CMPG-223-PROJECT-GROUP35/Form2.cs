@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CMPG_223_PROJECT_GROUP35
 {
-    public partial class Form2 : Form
+    public partial class FormSignUp : Form
     {
-        public Form2()
+        public FormSignUp()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace CMPG_223_PROJECT_GROUP35
 {
-    partial class Form2
+    partial class FormSignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFname);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(335, 43);
+            this.groupBox1.Location = new System.Drawing.Point(696, 78);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -68,7 +68,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Location = new System.Drawing.Point(91, 489);
+            this.btnSignUp.Location = new System.Drawing.Point(97, 462);
             this.btnSignUp.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(280, 53);
@@ -166,13 +166,14 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name:";
             // 
-            // Form2
+            // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 654);
+            this.ClientSize = new System.Drawing.Size(1743, 800);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form2";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormSignUp";
             this.Text = "Form2";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
