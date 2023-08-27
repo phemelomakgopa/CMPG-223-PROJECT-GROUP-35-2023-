@@ -75,6 +75,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnSignUp.TabIndex = 10;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // txtCellNum
             // 

@@ -114,6 +114,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtGuestPhoneNum
             // 

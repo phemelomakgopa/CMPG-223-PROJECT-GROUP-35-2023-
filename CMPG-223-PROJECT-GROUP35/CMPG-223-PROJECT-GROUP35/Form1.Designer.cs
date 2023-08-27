@@ -68,6 +68,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.addNewDetailslbl.Size = new System.Drawing.Size(235, 17);
             this.addNewDetailslbl.TabIndex = 8;
             this.addNewDetailslbl.Text = "New Receptionist? Add Your Details";
+            this.addNewDetailslbl.Click += new System.EventHandler(this.addNewDetailslbl_Click);
             // 
             // cbShowPassword
             // 

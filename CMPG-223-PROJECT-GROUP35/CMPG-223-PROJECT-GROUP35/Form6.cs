@@ -10,11 +10,23 @@ using System.Windows.Forms;
 
 namespace CMPG_223_PROJECT_GROUP35
 {
-    public partial class Form6 : Form
+    public partial class FormGuests : Form
     {
-        public Form6()
+        public FormGuests()
         {
             InitializeComponent();
+        }
+
+        private void btnAddNewGuest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Guest successfully added");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
