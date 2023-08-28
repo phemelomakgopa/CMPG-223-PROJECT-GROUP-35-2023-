@@ -411,7 +411,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox5.Size = new System.Drawing.Size(325, 368);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
+            this.groupBox5.Text = "Date and Time";
             // 
             // label7
             // 
