@@ -44,11 +44,11 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSubmitChanges = new System.Windows.Forms.Button();
             this.txtUpdateNum = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblUpdateNum = new System.Windows.Forms.Label();
             this.txtUpdateEmail = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblUpdateEmail = new System.Windows.Forms.Label();
             this.txtUpdateSurname = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblUpdateSurname = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbUpdateNum = new System.Windows.Forms.CheckBox();
             this.cbUpdateEmail = new System.Windows.Forms.CheckBox();
@@ -206,11 +206,11 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.tabPage2.Controls.Add(this.btnSubmitChanges);
             this.tabPage2.Controls.Add(this.txtUpdateNum);
-            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.lblUpdateNum);
             this.tabPage2.Controls.Add(this.txtUpdateEmail);
-            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.lblUpdateEmail);
             this.tabPage2.Controls.Add(this.txtUpdateSurname);
-            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.lblUpdateSurname);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -229,6 +229,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnSubmitChanges.TabIndex = 8;
             this.btnSubmitChanges.Text = "Submit Changes";
             this.btnSubmitChanges.UseVisualStyleBackColor = true;
+            this.btnSubmitChanges.Click += new System.EventHandler(this.btnSubmitChanges_Click);
             // 
             // txtUpdateNum
             // 
@@ -237,14 +238,14 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtUpdateNum.Size = new System.Drawing.Size(174, 22);
             this.txtUpdateNum.TabIndex = 7;
             // 
-            // label8
+            // lblUpdateNum
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(539, 465);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(192, 17);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Enter new cellphone number:";
+            this.lblUpdateNum.AutoSize = true;
+            this.lblUpdateNum.Location = new System.Drawing.Point(539, 465);
+            this.lblUpdateNum.Name = "lblUpdateNum";
+            this.lblUpdateNum.Size = new System.Drawing.Size(192, 17);
+            this.lblUpdateNum.TabIndex = 6;
+            this.lblUpdateNum.Text = "Enter new cellphone number:";
             // 
             // txtUpdateEmail
             // 
@@ -253,14 +254,14 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtUpdateEmail.Size = new System.Drawing.Size(397, 22);
             this.txtUpdateEmail.TabIndex = 5;
             // 
-            // label7
+            // lblUpdateEmail
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(539, 397);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(167, 17);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Enter new email address:";
+            this.lblUpdateEmail.AutoSize = true;
+            this.lblUpdateEmail.Location = new System.Drawing.Point(539, 397);
+            this.lblUpdateEmail.Name = "lblUpdateEmail";
+            this.lblUpdateEmail.Size = new System.Drawing.Size(167, 17);
+            this.lblUpdateEmail.TabIndex = 4;
+            this.lblUpdateEmail.Text = "Enter new email address:";
             // 
             // txtUpdateSurname
             // 
@@ -269,14 +270,14 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtUpdateSurname.Size = new System.Drawing.Size(397, 22);
             this.txtUpdateSurname.TabIndex = 3;
             // 
-            // label6
+            // lblUpdateSurname
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(539, 317);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 17);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Enter new surname:";
+            this.lblUpdateSurname.AutoSize = true;
+            this.lblUpdateSurname.Location = new System.Drawing.Point(539, 317);
+            this.lblUpdateSurname.Name = "lblUpdateSurname";
+            this.lblUpdateSurname.Size = new System.Drawing.Size(134, 17);
+            this.lblUpdateSurname.TabIndex = 2;
+            this.lblUpdateSurname.Text = "Enter new surname:";
             // 
             // groupBox3
             // 
@@ -299,6 +300,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbUpdateNum.TabIndex = 2;
             this.cbUpdateNum.Text = "Cellphone Number";
             this.cbUpdateNum.UseVisualStyleBackColor = true;
+            this.cbUpdateNum.CheckedChanged += new System.EventHandler(this.cbUpdateNum_CheckedChanged);
             // 
             // cbUpdateEmail
             // 
@@ -309,6 +311,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbUpdateEmail.TabIndex = 1;
             this.cbUpdateEmail.Text = "Email address";
             this.cbUpdateEmail.UseVisualStyleBackColor = true;
+            this.cbUpdateEmail.CheckedChanged += new System.EventHandler(this.cbUpdateEmail_CheckedChanged);
             // 
             // cbUpdateSurname
             // 
@@ -319,6 +322,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbUpdateSurname.TabIndex = 0;
             this.cbUpdateSurname.Text = "Surname";
             this.cbUpdateSurname.UseVisualStyleBackColor = true;
+            this.cbUpdateSurname.CheckedChanged += new System.EventHandler(this.cbUpdateSurname_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -368,6 +372,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnUpdateGuestSearch.TabIndex = 2;
             this.btnUpdateGuestSearch.Text = "Search";
             this.btnUpdateGuestSearch.UseVisualStyleBackColor = true;
+            this.btnUpdateGuestSearch.Click += new System.EventHandler(this.btnUpdateGuestSearch_Click);
             // 
             // txtUGuest
             // 
@@ -375,6 +380,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtUGuest.Name = "txtUGuest";
             this.txtUGuest.Size = new System.Drawing.Size(534, 22);
             this.txtUGuest.TabIndex = 1;
+            this.txtUGuest.TextChanged += new System.EventHandler(this.txtUGuest_TextChanged);
             // 
             // label4
             // 
@@ -417,6 +423,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnDeleteGuest.TabIndex = 4;
             this.btnDeleteGuest.Text = "Delete This Guest";
             this.btnDeleteGuest.UseVisualStyleBackColor = true;
+            this.btnDeleteGuest.Click += new System.EventHandler(this.btnDeleteGuest_Click);
             // 
             // lstGuestOutput
             // 
@@ -494,11 +501,11 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.TextBox txtFnameAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUpdateNum;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblUpdateNum;
         private System.Windows.Forms.TextBox txtUpdateEmail;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblUpdateEmail;
         private System.Windows.Forms.TextBox txtUpdateSurname;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblUpdateSurname;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox cbUpdateNum;
         private System.Windows.Forms.CheckBox cbUpdateEmail;
