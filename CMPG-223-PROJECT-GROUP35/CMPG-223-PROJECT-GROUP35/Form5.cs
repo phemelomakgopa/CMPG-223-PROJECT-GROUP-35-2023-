@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CMPG_223_PROJECT_GROUP35
 {
-    public partial class Form3 : Form
+    public partial class FormBookings : Form
     {
-        public Form3()
+        public FormBookings()
         {
             InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

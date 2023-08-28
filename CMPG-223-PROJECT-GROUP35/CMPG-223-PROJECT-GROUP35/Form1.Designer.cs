@@ -30,8 +30,8 @@ namespace CMPG_223_PROJECT_GROUP35
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.addNewDetailslbl = new System.Windows.Forms.Label();
+            this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.addNewDetailslbl);
+            this.groupBox1.Controls.Add(this.cbShowPassword);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(288, 37);
+            this.groupBox1.Location = new System.Drawing.Point(611, 66);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -58,27 +58,27 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
             // 
-            // label3
+            // addNewDetailslbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 399);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(235, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "New Receptionist? Add Your Details";
+            this.addNewDetailslbl.AutoSize = true;
+            this.addNewDetailslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewDetailslbl.Location = new System.Drawing.Point(169, 387);
+            this.addNewDetailslbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.addNewDetailslbl.Name = "addNewDetailslbl";
+            this.addNewDetailslbl.Size = new System.Drawing.Size(235, 17);
+            this.addNewDetailslbl.TabIndex = 8;
+            this.addNewDetailslbl.Text = "New Receptionist? Add Your Details";
             // 
-            // checkBox1
+            // cbShowPassword
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(413, 226);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(129, 21);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Show Password";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbShowPassword.AutoSize = true;
+            this.cbShowPassword.Location = new System.Drawing.Point(413, 226);
+            this.cbShowPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.cbShowPassword.Name = "cbShowPassword";
+            this.cbShowPassword.Size = new System.Drawing.Size(129, 21);
+            this.cbShowPassword.TabIndex = 7;
+            this.cbShowPassword.Text = "Show Password";
+            this.cbShowPassword.UseVisualStyleBackColor = true;
             // 
             // txtPassword
             // 
@@ -132,8 +132,9 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 580);
+            this.ClientSize = new System.Drawing.Size(1781, 711);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogIn";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
@@ -145,8 +146,8 @@ namespace CMPG_223_PROJECT_GROUP35
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label addNewDetailslbl;
+        private System.Windows.Forms.CheckBox cbShowPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
