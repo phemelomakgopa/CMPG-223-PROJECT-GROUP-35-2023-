@@ -7,14 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPG_223_PROJECT_GROUP35
 {
-    public partial class Form6 : Form
+    public partial class FormGuests : Form
     {
-        public Form6()
+        public FormGuests()
         {
             InitializeComponent();
+        }
+       
+        SqlConnection conn;
+        SqlCommand comm;
+        SqlDataAdapter adap;
+        SqlDataReader theReader;
+        DataSet ds;
+
+
+        private void btnAddNewGuest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                
+                
+                MessageBox.Show("Guest successfully added");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

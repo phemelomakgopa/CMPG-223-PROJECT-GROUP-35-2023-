@@ -29,5 +29,25 @@ namespace CMPG_223_PROJECT_GROUP35
             MessageBox.Show("With great power comes great resposibility. I am also batman");
 
         }
+
+        private void addNewDetailslbl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //close curren form
+                this.Close();
+
+                //creating sign up form
+                Form FormSignUp = new FormSignUp();
+
+                //Display sign up form
+                FormSignUp.ShowDialog();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Oops, soemthing went wrong.");
+            }
+        }
     }
 }

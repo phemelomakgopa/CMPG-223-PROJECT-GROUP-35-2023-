@@ -16,5 +16,25 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             InitializeComponent();
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = txtFname.Text;
+                string lastname = txtLName.Text;
+                string email = txtEmail.Text;
+                string newPassword = txtPassword.Text;
+                int cellNum = int.Parse(txtCellNum.Text);
+
+                MessageBox.Show("Receptionist successfully signed up.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Oops, something went wrong.");
+            }
+
+
+        }
     }
 }
