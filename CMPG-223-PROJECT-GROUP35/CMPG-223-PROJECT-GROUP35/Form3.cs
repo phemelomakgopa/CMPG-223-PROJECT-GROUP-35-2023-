@@ -118,5 +118,9 @@ namespace CMPG_223_PROJECT_GROUP35
             cmbUpdateCapacity.Enabled = true;
         }
 
+        private void btnChangeInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

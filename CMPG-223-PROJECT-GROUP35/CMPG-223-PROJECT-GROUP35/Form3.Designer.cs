@@ -81,24 +81,22 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabGuests.Controls.Add(this.tabPage1);
             this.tabGuests.Controls.Add(this.tabPage2);
             this.tabGuests.Controls.Add(this.tabPage3);
-            this.tabGuests.Location = new System.Drawing.Point(12, 13);
-            this.tabGuests.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabGuests.Location = new System.Drawing.Point(11, 10);
             this.tabGuests.Name = "tabGuests";
             this.tabGuests.SelectedIndex = 0;
-            this.tabGuests.Size = new System.Drawing.Size(1542, 962);
+            this.tabGuests.Size = new System.Drawing.Size(1371, 770);
             this.tabGuests.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(1534, 929);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(1363, 741);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Add New Guest";
+            this.tabPage1.Text = "Add New Room";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -114,11 +112,11 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRoomNum);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(53, 45);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(47, 36);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(539, 626);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(479, 501);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Room";
@@ -126,18 +124,17 @@ namespace CMPG_223_PROJECT_GROUP35
             // cmbCapacity
             // 
             this.cmbCapacity.FormattingEnabled = true;
-            this.cmbCapacity.Location = new System.Drawing.Point(43, 306);
-            this.cmbCapacity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbCapacity.Location = new System.Drawing.Point(38, 245);
             this.cmbCapacity.Name = "cmbCapacity";
-            this.cmbCapacity.Size = new System.Drawing.Size(136, 33);
+            this.cmbCapacity.Size = new System.Drawing.Size(121, 28);
             this.cmbCapacity.TabIndex = 11;
             // 
             // btnAddRoom
             // 
-            this.btnAddRoom.Location = new System.Drawing.Point(109, 495);
-            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddRoom.Location = new System.Drawing.Point(97, 396);
+            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddRoom.Name = "btnAddRoom";
-            this.btnAddRoom.Size = new System.Drawing.Size(315, 66);
+            this.btnAddRoom.Size = new System.Drawing.Size(280, 53);
             this.btnAddRoom.TabIndex = 10;
             this.btnAddRoom.Text = "Add Room";
             this.btnAddRoom.UseVisualStyleBackColor = true;
@@ -145,94 +142,93 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtRoomDescr
             // 
-            this.txtRoomDescr.Location = new System.Drawing.Point(42, 414);
-            this.txtRoomDescr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRoomDescr.Location = new System.Drawing.Point(37, 331);
+            this.txtRoomDescr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRoomDescr.Name = "txtRoomDescr";
-            this.txtRoomDescr.Size = new System.Drawing.Size(439, 30);
+            this.txtRoomDescr.Size = new System.Drawing.Size(391, 26);
             this.txtRoomDescr.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 374);
+            this.label5.Location = new System.Drawing.Point(33, 299);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(165, 25);
+            this.label5.Size = new System.Drawing.Size(144, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Room Description";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 260);
+            this.label4.Location = new System.Drawing.Point(34, 208);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(418, 25);
+            this.label4.Size = new System.Drawing.Size(359, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "How many people can this room accomodate?:";
             // 
             // roomPrice
             // 
-            this.roomPrice.Location = new System.Drawing.Point(43, 196);
-            this.roomPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.roomPrice.Location = new System.Drawing.Point(38, 157);
+            this.roomPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.roomPrice.Name = "roomPrice";
-            this.roomPrice.Size = new System.Drawing.Size(424, 30);
+            this.roomPrice.Size = new System.Drawing.Size(377, 26);
             this.roomPrice.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 158);
+            this.label3.Location = new System.Drawing.Point(34, 126);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 25);
+            this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Room Price";
             // 
             // txtRoomType
             // 
-            this.txtRoomType.Location = new System.Drawing.Point(233, 91);
-            this.txtRoomType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRoomType.Location = new System.Drawing.Point(207, 73);
+            this.txtRoomType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRoomType.Name = "txtRoomType";
-            this.txtRoomType.Size = new System.Drawing.Size(234, 30);
+            this.txtRoomType.Size = new System.Drawing.Size(208, 26);
             this.txtRoomType.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 65);
+            this.label2.Location = new System.Drawing.Point(203, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 25);
+            this.label2.Size = new System.Drawing.Size(94, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Room Type";
             // 
             // txtRoomNum
             // 
-            this.txtRoomNum.Location = new System.Drawing.Point(42, 91);
-            this.txtRoomNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRoomNum.Location = new System.Drawing.Point(37, 73);
+            this.txtRoomNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRoomNum.Name = "txtRoomNum";
-            this.txtRoomNum.Size = new System.Drawing.Size(180, 30);
+            this.txtRoomNum.Size = new System.Drawing.Size(160, 26);
             this.txtRoomNum.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 65);
+            this.label1.Location = new System.Drawing.Point(33, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 25);
+            this.label1.Size = new System.Drawing.Size(117, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Room Number";
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(1534, 929);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(1363, 741);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Change Room Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -251,85 +247,82 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox2.Controls.Add(this.btnChangeInfo);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtUpdateSearch);
-            this.groupBox2.Location = new System.Drawing.Point(36, 21);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Location = new System.Drawing.Point(32, 17);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(903, 729);
+            this.groupBox2.Size = new System.Drawing.Size(803, 583);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Change Room Details";
             // 
             // txtUpdateDescr
             // 
-            this.txtUpdateDescr.Location = new System.Drawing.Point(467, 499);
-            this.txtUpdateDescr.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUpdateDescr.Location = new System.Drawing.Point(415, 399);
+            this.txtUpdateDescr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUpdateDescr.Name = "txtUpdateDescr";
-            this.txtUpdateDescr.Size = new System.Drawing.Size(295, 26);
+            this.txtUpdateDescr.Size = new System.Drawing.Size(263, 22);
             this.txtUpdateDescr.TabIndex = 21;
             // 
             // lblDescr
             // 
             this.lblDescr.AutoSize = true;
-            this.lblDescr.Location = new System.Drawing.Point(462, 459);
+            this.lblDescr.Location = new System.Drawing.Point(411, 367);
             this.lblDescr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescr.Name = "lblDescr";
-            this.lblDescr.Size = new System.Drawing.Size(136, 20);
+            this.lblDescr.Size = new System.Drawing.Size(115, 16);
             this.lblDescr.TabIndex = 20;
             this.lblDescr.Text = "Room Description";
             // 
             // cmbUpdateCapacity
             // 
             this.cmbUpdateCapacity.FormattingEnabled = true;
-            this.cmbUpdateCapacity.Location = new System.Drawing.Point(469, 395);
-            this.cmbUpdateCapacity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbUpdateCapacity.Location = new System.Drawing.Point(417, 316);
             this.cmbUpdateCapacity.Name = "cmbUpdateCapacity";
-            this.cmbUpdateCapacity.Size = new System.Drawing.Size(128, 28);
+            this.cmbUpdateCapacity.Size = new System.Drawing.Size(114, 24);
             this.cmbUpdateCapacity.TabIndex = 19;
             // 
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(465, 349);
+            this.lblCapacity.Location = new System.Drawing.Point(413, 279);
             this.lblCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(339, 20);
+            this.lblCapacity.Size = new System.Drawing.Size(287, 16);
             this.lblCapacity.TabIndex = 18;
             this.lblCapacity.Text = "How many people can this room accomodate?:";
             // 
             // txtUpdatePrice
             // 
-            this.txtUpdatePrice.Location = new System.Drawing.Point(469, 285);
-            this.txtUpdatePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUpdatePrice.Location = new System.Drawing.Point(417, 228);
+            this.txtUpdatePrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUpdatePrice.Name = "txtUpdatePrice";
-            this.txtUpdatePrice.Size = new System.Drawing.Size(388, 26);
+            this.txtUpdatePrice.Size = new System.Drawing.Size(345, 22);
             this.txtUpdatePrice.TabIndex = 17;
             // 
             // lblRoomPrice
             // 
             this.lblRoomPrice.AutoSize = true;
-            this.lblRoomPrice.Location = new System.Drawing.Point(465, 246);
+            this.lblRoomPrice.Location = new System.Drawing.Point(413, 197);
             this.lblRoomPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoomPrice.Name = "lblRoomPrice";
-            this.lblRoomPrice.Size = new System.Drawing.Size(91, 20);
+            this.lblRoomPrice.Size = new System.Drawing.Size(78, 16);
             this.lblRoomPrice.TabIndex = 16;
             this.lblRoomPrice.Text = "Room Price";
             // 
             // txtUpdateType
             // 
-            this.txtUpdateType.Location = new System.Drawing.Point(469, 190);
-            this.txtUpdateType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUpdateType.Location = new System.Drawing.Point(417, 152);
+            this.txtUpdateType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUpdateType.Name = "txtUpdateType";
-            this.txtUpdateType.Size = new System.Drawing.Size(335, 26);
+            this.txtUpdateType.Size = new System.Drawing.Size(298, 22);
             this.txtUpdateType.TabIndex = 15;
             // 
             // lblRoomType
             // 
             this.lblRoomType.AutoSize = true;
-            this.lblRoomType.Location = new System.Drawing.Point(465, 164);
+            this.lblRoomType.Location = new System.Drawing.Point(413, 131);
             this.lblRoomType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(90, 20);
+            this.lblRoomType.Size = new System.Drawing.Size(79, 16);
             this.lblRoomType.TabIndex = 14;
             this.lblRoomType.Text = "Room Type";
             // 
@@ -339,11 +332,9 @@ namespace CMPG_223_PROJECT_GROUP35
             this.GBchange.Controls.Add(this.cbUpdateCapacity);
             this.GBchange.Controls.Add(this.cbUpdatePrice);
             this.GBchange.Controls.Add(this.cbRoomType);
-            this.GBchange.Location = new System.Drawing.Point(76, 164);
-            this.GBchange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.GBchange.Location = new System.Drawing.Point(68, 131);
             this.GBchange.Name = "GBchange";
-            this.GBchange.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GBchange.Size = new System.Drawing.Size(364, 341);
+            this.GBchange.Size = new System.Drawing.Size(324, 273);
             this.GBchange.TabIndex = 3;
             this.GBchange.TabStop = false;
             this.GBchange.Text = "What Do You Want To Change";
@@ -351,10 +342,9 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbUpdateDescr
             // 
             this.cbUpdateDescr.AutoSize = true;
-            this.cbUpdateDescr.Location = new System.Drawing.Point(30, 231);
-            this.cbUpdateDescr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbUpdateDescr.Location = new System.Drawing.Point(27, 185);
             this.cbUpdateDescr.Name = "cbUpdateDescr";
-            this.cbUpdateDescr.Size = new System.Drawing.Size(162, 24);
+            this.cbUpdateDescr.Size = new System.Drawing.Size(137, 20);
             this.cbUpdateDescr.TabIndex = 3;
             this.cbUpdateDescr.Text = "Room Description";
             this.cbUpdateDescr.UseVisualStyleBackColor = true;
@@ -362,10 +352,9 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbUpdateCapacity
             // 
             this.cbUpdateCapacity.AutoSize = true;
-            this.cbUpdateCapacity.Location = new System.Drawing.Point(30, 180);
-            this.cbUpdateCapacity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbUpdateCapacity.Location = new System.Drawing.Point(27, 144);
             this.cbUpdateCapacity.Name = "cbUpdateCapacity";
-            this.cbUpdateCapacity.Size = new System.Drawing.Size(143, 24);
+            this.cbUpdateCapacity.Size = new System.Drawing.Size(122, 20);
             this.cbUpdateCapacity.TabIndex = 2;
             this.cbUpdateCapacity.Text = "Room Capacity";
             this.cbUpdateCapacity.UseVisualStyleBackColor = true;
@@ -374,10 +363,9 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbUpdatePrice
             // 
             this.cbUpdatePrice.AutoSize = true;
-            this.cbUpdatePrice.Location = new System.Drawing.Point(30, 125);
-            this.cbUpdatePrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbUpdatePrice.Location = new System.Drawing.Point(27, 100);
             this.cbUpdatePrice.Name = "cbUpdatePrice";
-            this.cbUpdatePrice.Size = new System.Drawing.Size(117, 24);
+            this.cbUpdatePrice.Size = new System.Drawing.Size(100, 20);
             this.cbUpdatePrice.TabIndex = 1;
             this.cbUpdatePrice.Text = "Room Price";
             this.cbUpdatePrice.UseVisualStyleBackColor = true;
@@ -386,10 +374,9 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbRoomType
             // 
             this.cbRoomType.AutoSize = true;
-            this.cbRoomType.Location = new System.Drawing.Point(30, 66);
-            this.cbRoomType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbRoomType.Location = new System.Drawing.Point(27, 53);
             this.cbRoomType.Name = "cbRoomType";
-            this.cbRoomType.Size = new System.Drawing.Size(116, 24);
+            this.cbRoomType.Size = new System.Drawing.Size(101, 20);
             this.cbRoomType.TabIndex = 0;
             this.cbRoomType.Text = "Room Type";
             this.cbRoomType.UseVisualStyleBackColor = true;
@@ -397,39 +384,37 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // btnChangeInfo
             // 
-            this.btnChangeInfo.Location = new System.Drawing.Point(708, 65);
-            this.btnChangeInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChangeInfo.Location = new System.Drawing.Point(629, 52);
             this.btnChangeInfo.Name = "btnChangeInfo";
-            this.btnChangeInfo.Size = new System.Drawing.Size(150, 44);
+            this.btnChangeInfo.Size = new System.Drawing.Size(133, 35);
             this.btnChangeInfo.TabIndex = 2;
             this.btnChangeInfo.Text = "Change Info";
             this.btnChangeInfo.UseVisualStyleBackColor = true;
+            this.btnChangeInfo.Click += new System.EventHandler(this.btnChangeInfo_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(73, 79);
+            this.label6.Location = new System.Drawing.Point(65, 63);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
+            this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Room ID:";
             // 
             // txtUpdateSearch
             // 
-            this.txtUpdateSearch.Location = new System.Drawing.Point(227, 72);
-            this.txtUpdateSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUpdateSearch.Location = new System.Drawing.Point(202, 58);
             this.txtUpdateSearch.Name = "txtUpdateSearch";
-            this.txtUpdateSearch.Size = new System.Drawing.Size(380, 26);
+            this.txtUpdateSearch.Size = new System.Drawing.Size(338, 22);
             this.txtUpdateSearch.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage3.Size = new System.Drawing.Size(1534, 929);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Size = new System.Drawing.Size(1363, 741);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Remove Room";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -439,21 +424,18 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox4.Controls.Add(this.btnRemoveRoom);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.deleteRoom);
-            this.groupBox4.Location = new System.Drawing.Point(83, 99);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Location = new System.Drawing.Point(74, 79);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox4.Size = new System.Drawing.Size(849, 200);
+            this.groupBox4.Size = new System.Drawing.Size(755, 160);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Remove Rooms";
             // 
             // btnRemoveRoom
             // 
-            this.btnRemoveRoom.Location = new System.Drawing.Point(662, 60);
-            this.btnRemoveRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemoveRoom.Location = new System.Drawing.Point(588, 48);
             this.btnRemoveRoom.Name = "btnRemoveRoom";
-            this.btnRemoveRoom.Size = new System.Drawing.Size(150, 44);
+            this.btnRemoveRoom.Size = new System.Drawing.Size(133, 35);
             this.btnRemoveRoom.TabIndex = 5;
             this.btnRemoveRoom.Text = "Remove Room";
             this.btnRemoveRoom.UseVisualStyleBackColor = true;
@@ -462,28 +444,26 @@ namespace CMPG_223_PROJECT_GROUP35
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 74);
+            this.label11.Location = new System.Drawing.Point(24, 59);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 20);
+            this.label11.Size = new System.Drawing.Size(63, 16);
             this.label11.TabIndex = 4;
             this.label11.Text = "Room ID:";
             // 
             // deleteRoom
             // 
-            this.deleteRoom.Location = new System.Drawing.Point(181, 68);
-            this.deleteRoom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteRoom.Location = new System.Drawing.Point(161, 54);
             this.deleteRoom.Name = "deleteRoom";
-            this.deleteRoom.Size = new System.Drawing.Size(380, 26);
+            this.deleteRoom.Size = new System.Drawing.Size(338, 22);
             this.deleteRoom.TabIndex = 3;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1946, 1046);
+            this.ClientSize = new System.Drawing.Size(1726, 837);
             this.Controls.Add(this.tabGuests);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form3";
             this.Text = "GuestForm";
             this.Load += new System.EventHandler(this.Form3_Load);
