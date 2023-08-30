@@ -21,7 +21,7 @@ namespace CMPG_223_PROJECT_GROUP35
         SqlConnection conn;
         SqlCommand comm;
         SqlDataAdapter adap;
-        SqlDataReader theReader;
+        SqlDataReader reader;
         DataSet ds;
         public string conStr;
         //conn = new SqlConnection(conStr);
@@ -45,8 +45,6 @@ namespace CMPG_223_PROJECT_GROUP35
 
                 conn.Close();
 
-                
-                
                 MessageBox.Show("Guest successfully added");
             }
             catch(Exception ex)
@@ -129,11 +127,23 @@ namespace CMPG_223_PROJECT_GROUP35
             }
         }
 
-        private void btnUpdateGuestSearch_Click(object sender, EventArgs e)
+        public void display()
         {
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+            }
+            string sql = "SELECT * FROM Guests";
+            comm = new SqlCommand(sql, conn);
+            reader = comm.ExecuteReader();
 
+            while (reader.Read())
+            {
+                lstSearchOutput.Items.Add(reader.GetValue(0) + "\t" + reader.GetValue(1) + "\t" + reader.GetValue(2) + "\t" + reader.GetValue(3) + "\t" + reader.GetValue(4));
+                lstSearchOutput.Items.Add("");
+            }
+            conn.Close();
         }
-
         private void txtUGuest_TextChanged(object sender, EventArgs e)
         {
             lstGuestOutput.Items.Clear();
@@ -145,30 +155,29 @@ namespace CMPG_223_PROJECT_GROUP35
                 }
                 string query = "SELECT * from Guests WHERE cellnumber LIKE '%" + txtSearchGuest.Text + "%'";
                 comm = new SqlCommand(query, conn);
-                theReader = comm.ExecuteReader();
+                reader = comm.ExecuteReader();
 
-                while (theReader.Read())
+                while(reader.Read())
                 {
-                    lstSearchOutput.Items.Add(theReader.GetValue(0) + "\t" + theReader.GetValue(1) + "\t" + theReader.GetValue(2) + "\t" + theReader.GetValue(3) + "\t" + theReader.GetValue(4));
+                    lstSearchOutput.Items.Add(reader.GetValue(0) + "\t" + reader.GetValue(1) + "\t" + reader.GetValue(2) + "\t" + reader.GetValue(3) + "\t" + reader.GetValue(4));
                     lstSearchOutput.Items.Add("");
                 }
                 conn.Close();
 
             }
-
-
-
-            /*
-                            SqlDataAdapter adap = new SqlDataAdapter(query, conStr);
-                            DataSet ds = new DataSet();
-                            adap.Fill(ds, "Guests");
-
-                            lstGuestOutput.DataSource = ds;
-                            //lstGuestOutput;
-
-                        }*/
-
             catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            try
+            {
+                display();
+            }
+            catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -176,7 +185,25 @@ namespace CMPG_223_PROJECT_GROUP35
 
         private void btnDeleteGuest_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if(conn.State ==ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+                string delete = "DELETE FROM Guests WHERE cellnumber =" + lstGuestOutput.SelectedItem;
+                comm = new SqlCommand(delete, conn);
+                adap = new SqlDataAdapter();
+                adap.DeleteCommand = comm;
+                adap.DeleteCommand.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Guest is successfully removed from the system");
+                
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

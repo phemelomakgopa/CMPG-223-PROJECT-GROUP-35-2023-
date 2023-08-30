@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CMPG_223_PROJECT_GROUP35
 {
@@ -15,33 +16,54 @@ namespace CMPG_223_PROJECT_GROUP35
         public FormNewExisting()
         {
             InitializeComponent();
-            existingGB.Visible = false;
+            existingGB.Enabled = false;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             try
             {
-                int GuestNum = int.Parse(txtGuestPhoneNum.Text);
-
                 if (rdoNewGuest.Checked)
                 {
                     Form FormGuests = new FormGuests();
-
+                    existingGB.Enabled = false;
                     FormGuests.ShowDialog();
                 }
                 else if (rdoExGuest.Checked)
                 {
-                    existingGB.Show();
+                    existingGB.Enabled = true;
+                }
+
+                if (cbBookings.Checked)
+                {
+                    FormBookings book = new FormBookings();
+                    book.ShowDialog();
+                }
+                else if(cbChangeGuestInfo.Checked)
+                {
+                    FormGuests guest = new FormGuests();
+                    guest.ShowDialog();
                 }
 
             }
-            catch (Exception)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Oops, something went wrong.");
+                MessageBox.Show(ex.Message);
             }
-            
+         
+        }
 
+        private void btnMainRooms_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form3 rooms = new Form3();
+                rooms.ShowDialog();
+            }
+            catch (SqlException EX)
+            {
+                MessageBox.Show(EX.Message);
+            }
         }
     }
 }

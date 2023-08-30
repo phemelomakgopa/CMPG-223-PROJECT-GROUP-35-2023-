@@ -82,19 +82,21 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(301, 12);
+            this.tabControl.Location = new System.Drawing.Point(12, 13);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1160, 782);
+            this.tabControl.Size = new System.Drawing.Size(1305, 978);
             this.tabControl.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1152, 753);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1297, 945);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add New Guest";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -110,21 +112,21 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFnameAdd);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(337, 91);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(152, 30);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(479, 571);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(539, 714);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Guest";
             // 
             // btnAddNewGuest
             // 
-            this.btnAddNewGuest.Location = new System.Drawing.Point(97, 462);
-            this.btnAddNewGuest.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddNewGuest.Location = new System.Drawing.Point(109, 578);
+            this.btnAddNewGuest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddNewGuest.Name = "btnAddNewGuest";
-            this.btnAddNewGuest.Size = new System.Drawing.Size(280, 53);
+            this.btnAddNewGuest.Size = new System.Drawing.Size(315, 66);
             this.btnAddNewGuest.TabIndex = 10;
             this.btnAddNewGuest.Text = "Add New Guest";
             this.btnAddNewGuest.UseVisualStyleBackColor = true;
@@ -132,73 +134,73 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtCellNumAdd
             // 
-            this.txtCellNumAdd.Location = new System.Drawing.Point(37, 260);
-            this.txtCellNumAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCellNumAdd.Location = new System.Drawing.Point(42, 325);
+            this.txtCellNumAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCellNumAdd.Name = "txtCellNumAdd";
-            this.txtCellNumAdd.Size = new System.Drawing.Size(391, 22);
+            this.txtCellNumAdd.Size = new System.Drawing.Size(439, 26);
             this.txtCellNumAdd.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 228);
+            this.label5.Location = new System.Drawing.Point(37, 285);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 17);
+            this.label5.Size = new System.Drawing.Size(144, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Cellphone Number:";
             // 
             // txtEmailAdd
             // 
-            this.txtEmailAdd.Location = new System.Drawing.Point(37, 174);
-            this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmailAdd.Location = new System.Drawing.Point(42, 218);
+            this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmailAdd.Name = "txtEmailAdd";
-            this.txtEmailAdd.Size = new System.Drawing.Size(377, 22);
+            this.txtEmailAdd.Size = new System.Drawing.Size(424, 26);
             this.txtEmailAdd.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 143);
+            this.label3.Location = new System.Drawing.Point(37, 179);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 17);
+            this.label3.Size = new System.Drawing.Size(201, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email address (Username):";
             // 
             // txtLNameAdd
             // 
-            this.txtLNameAdd.Location = new System.Drawing.Point(207, 73);
-            this.txtLNameAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLNameAdd.Location = new System.Drawing.Point(233, 91);
+            this.txtLNameAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLNameAdd.Name = "txtLNameAdd";
-            this.txtLNameAdd.Size = new System.Drawing.Size(208, 22);
+            this.txtLNameAdd.Size = new System.Drawing.Size(234, 26);
             this.txtLNameAdd.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 52);
+            this.label2.Location = new System.Drawing.Point(228, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 17);
+            this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Last Name:";
             // 
             // txtFnameAdd
             // 
-            this.txtFnameAdd.Location = new System.Drawing.Point(37, 73);
-            this.txtFnameAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFnameAdd.Location = new System.Drawing.Point(42, 91);
+            this.txtFnameAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtFnameAdd.Name = "txtFnameAdd";
-            this.txtFnameAdd.Size = new System.Drawing.Size(160, 22);
+            this.txtFnameAdd.Size = new System.Drawing.Size(180, 26);
             this.txtFnameAdd.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 52);
+            this.label1.Location = new System.Drawing.Point(37, 65);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name:";
             // 
@@ -213,19 +215,22 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabPage2.Controls.Add(this.lblUpdateSurname);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1152, 753);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1297, 945);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Change Guest Info";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // btnSubmitChanges
             // 
-            this.btnSubmitChanges.Location = new System.Drawing.Point(780, 457);
+            this.btnSubmitChanges.Location = new System.Drawing.Point(878, 571);
+            this.btnSubmitChanges.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmitChanges.Name = "btnSubmitChanges";
-            this.btnSubmitChanges.Size = new System.Drawing.Size(189, 71);
+            this.btnSubmitChanges.Size = new System.Drawing.Size(213, 89);
             this.btnSubmitChanges.TabIndex = 8;
             this.btnSubmitChanges.Text = "Submit Changes";
             this.btnSubmitChanges.UseVisualStyleBackColor = true;
@@ -233,49 +238,52 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtUpdateNum
             // 
-            this.txtUpdateNum.Location = new System.Drawing.Point(542, 505);
+            this.txtUpdateNum.Location = new System.Drawing.Point(610, 631);
+            this.txtUpdateNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUpdateNum.Name = "txtUpdateNum";
-            this.txtUpdateNum.Size = new System.Drawing.Size(174, 22);
+            this.txtUpdateNum.Size = new System.Drawing.Size(195, 26);
             this.txtUpdateNum.TabIndex = 7;
             // 
             // lblUpdateNum
             // 
             this.lblUpdateNum.AutoSize = true;
-            this.lblUpdateNum.Location = new System.Drawing.Point(539, 465);
+            this.lblUpdateNum.Location = new System.Drawing.Point(606, 581);
             this.lblUpdateNum.Name = "lblUpdateNum";
-            this.lblUpdateNum.Size = new System.Drawing.Size(192, 17);
+            this.lblUpdateNum.Size = new System.Drawing.Size(215, 20);
             this.lblUpdateNum.TabIndex = 6;
             this.lblUpdateNum.Text = "Enter new cellphone number:";
             // 
             // txtUpdateEmail
             // 
-            this.txtUpdateEmail.Location = new System.Drawing.Point(542, 425);
+            this.txtUpdateEmail.Location = new System.Drawing.Point(610, 531);
+            this.txtUpdateEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUpdateEmail.Name = "txtUpdateEmail";
-            this.txtUpdateEmail.Size = new System.Drawing.Size(397, 22);
+            this.txtUpdateEmail.Size = new System.Drawing.Size(446, 26);
             this.txtUpdateEmail.TabIndex = 5;
             // 
             // lblUpdateEmail
             // 
             this.lblUpdateEmail.AutoSize = true;
-            this.lblUpdateEmail.Location = new System.Drawing.Point(539, 397);
+            this.lblUpdateEmail.Location = new System.Drawing.Point(606, 496);
             this.lblUpdateEmail.Name = "lblUpdateEmail";
-            this.lblUpdateEmail.Size = new System.Drawing.Size(167, 17);
+            this.lblUpdateEmail.Size = new System.Drawing.Size(187, 20);
             this.lblUpdateEmail.TabIndex = 4;
             this.lblUpdateEmail.Text = "Enter new email address:";
             // 
             // txtUpdateSurname
             // 
-            this.txtUpdateSurname.Location = new System.Drawing.Point(542, 357);
+            this.txtUpdateSurname.Location = new System.Drawing.Point(610, 446);
+            this.txtUpdateSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUpdateSurname.Name = "txtUpdateSurname";
-            this.txtUpdateSurname.Size = new System.Drawing.Size(397, 22);
+            this.txtUpdateSurname.Size = new System.Drawing.Size(446, 26);
             this.txtUpdateSurname.TabIndex = 3;
             // 
             // lblUpdateSurname
             // 
             this.lblUpdateSurname.AutoSize = true;
-            this.lblUpdateSurname.Location = new System.Drawing.Point(539, 317);
+            this.lblUpdateSurname.Location = new System.Drawing.Point(606, 396);
             this.lblUpdateSurname.Name = "lblUpdateSurname";
-            this.lblUpdateSurname.Size = new System.Drawing.Size(134, 17);
+            this.lblUpdateSurname.Size = new System.Drawing.Size(151, 20);
             this.lblUpdateSurname.TabIndex = 2;
             this.lblUpdateSurname.Text = "Enter new surname:";
             // 
@@ -284,9 +292,11 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox3.Controls.Add(this.cbUpdateNum);
             this.groupBox3.Controls.Add(this.cbUpdateEmail);
             this.groupBox3.Controls.Add(this.cbUpdateSurname);
-            this.groupBox3.Location = new System.Drawing.Point(197, 317);
+            this.groupBox3.Location = new System.Drawing.Point(116, 396);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(324, 211);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(364, 264);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "What Do You Want To Change";
@@ -294,9 +304,10 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbUpdateNum
             // 
             this.cbUpdateNum.AutoSize = true;
-            this.cbUpdateNum.Location = new System.Drawing.Point(27, 144);
+            this.cbUpdateNum.Location = new System.Drawing.Point(30, 180);
+            this.cbUpdateNum.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbUpdateNum.Name = "cbUpdateNum";
-            this.cbUpdateNum.Size = new System.Drawing.Size(147, 21);
+            this.cbUpdateNum.Size = new System.Drawing.Size(166, 24);
             this.cbUpdateNum.TabIndex = 2;
             this.cbUpdateNum.Text = "Cellphone Number";
             this.cbUpdateNum.UseVisualStyleBackColor = true;
@@ -305,9 +316,10 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbUpdateEmail
             // 
             this.cbUpdateEmail.AutoSize = true;
-            this.cbUpdateEmail.Location = new System.Drawing.Point(27, 100);
+            this.cbUpdateEmail.Location = new System.Drawing.Point(30, 125);
+            this.cbUpdateEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbUpdateEmail.Name = "cbUpdateEmail";
-            this.cbUpdateEmail.Size = new System.Drawing.Size(119, 21);
+            this.cbUpdateEmail.Size = new System.Drawing.Size(135, 24);
             this.cbUpdateEmail.TabIndex = 1;
             this.cbUpdateEmail.Text = "Email address";
             this.cbUpdateEmail.UseVisualStyleBackColor = true;
@@ -316,9 +328,10 @@ namespace CMPG_223_PROJECT_GROUP35
             // cbUpdateSurname
             // 
             this.cbUpdateSurname.AutoSize = true;
-            this.cbUpdateSurname.Location = new System.Drawing.Point(27, 53);
+            this.cbUpdateSurname.Location = new System.Drawing.Point(30, 66);
+            this.cbUpdateSurname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbUpdateSurname.Name = "cbUpdateSurname";
-            this.cbUpdateSurname.Size = new System.Drawing.Size(87, 21);
+            this.cbUpdateSurname.Size = new System.Drawing.Size(100, 24);
             this.cbUpdateSurname.TabIndex = 0;
             this.cbUpdateSurname.Text = "Surname";
             this.cbUpdateSurname.UseVisualStyleBackColor = true;
@@ -332,9 +345,11 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox2.Controls.Add(this.btnUpdateGuestSearch);
             this.groupBox2.Controls.Add(this.txtUGuest);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(197, 35);
+            this.groupBox2.Location = new System.Drawing.Point(19, 8);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(772, 267);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(868, 334);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Guest";
@@ -342,61 +357,65 @@ namespace CMPG_223_PROJECT_GROUP35
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(592, 210);
+            this.label10.Location = new System.Drawing.Point(666, 262);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 17);
+            this.label10.Size = new System.Drawing.Size(78, 20);
             this.label10.TabIndex = 5;
             this.label10.Text = "Guest ID:";
             // 
             // txtGuestID
             // 
-            this.txtGuestID.Location = new System.Drawing.Point(667, 205);
+            this.txtGuestID.Location = new System.Drawing.Point(750, 256);
+            this.txtGuestID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtGuestID.Name = "txtGuestID";
-            this.txtGuestID.Size = new System.Drawing.Size(75, 22);
+            this.txtGuestID.Size = new System.Drawing.Size(84, 26);
             this.txtGuestID.TabIndex = 4;
             // 
             // lstSearchOutput
             // 
             this.lstSearchOutput.FormattingEnabled = true;
-            this.lstSearchOutput.ItemHeight = 16;
-            this.lstSearchOutput.Location = new System.Drawing.Point(27, 74);
+            this.lstSearchOutput.ItemHeight = 20;
+            this.lstSearchOutput.Location = new System.Drawing.Point(30, 92);
+            this.lstSearchOutput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstSearchOutput.Name = "lstSearchOutput";
-            this.lstSearchOutput.Size = new System.Drawing.Size(715, 116);
+            this.lstSearchOutput.Size = new System.Drawing.Size(804, 144);
             this.lstSearchOutput.TabIndex = 3;
             // 
             // btnUpdateGuestSearch
             // 
-            this.btnUpdateGuestSearch.Location = new System.Drawing.Point(667, 32);
+            this.btnUpdateGuestSearch.Location = new System.Drawing.Point(750, 40);
+            this.btnUpdateGuestSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateGuestSearch.Name = "btnUpdateGuestSearch";
-            this.btnUpdateGuestSearch.Size = new System.Drawing.Size(75, 25);
+            this.btnUpdateGuestSearch.Size = new System.Drawing.Size(84, 31);
             this.btnUpdateGuestSearch.TabIndex = 2;
             this.btnUpdateGuestSearch.Text = "Search";
             this.btnUpdateGuestSearch.UseVisualStyleBackColor = true;
-            this.btnUpdateGuestSearch.Click += new System.EventHandler(this.btnUpdateGuestSearch_Click);
             // 
             // txtUGuest
             // 
-            this.txtUGuest.Location = new System.Drawing.Point(127, 32);
+            this.txtUGuest.Location = new System.Drawing.Point(143, 40);
+            this.txtUGuest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUGuest.Name = "txtUGuest";
-            this.txtUGuest.Size = new System.Drawing.Size(534, 22);
+            this.txtUGuest.Size = new System.Drawing.Size(600, 26);
             this.txtUGuest.TabIndex = 1;
             this.txtUGuest.TextChanged += new System.EventHandler(this.txtUGuest_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 37);
+            this.label4.Location = new System.Drawing.Point(27, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 17);
+            this.label4.Size = new System.Drawing.Size(112, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Search Guest:";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1152, 753);
+            this.tabPage3.Size = new System.Drawing.Size(1297, 945);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Delete Existing Guest";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -408,18 +427,21 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox4.Controls.Add(this.btnSearchGuest);
             this.groupBox4.Controls.Add(this.txtSearchGuest);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Location = new System.Drawing.Point(175, 43);
+            this.groupBox4.Location = new System.Drawing.Point(197, 54);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(772, 363);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Size = new System.Drawing.Size(868, 454);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Delete Guest";
             // 
             // btnDeleteGuest
             // 
-            this.btnDeleteGuest.Location = new System.Drawing.Point(268, 247);
+            this.btnDeleteGuest.Location = new System.Drawing.Point(302, 309);
+            this.btnDeleteGuest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDeleteGuest.Name = "btnDeleteGuest";
-            this.btnDeleteGuest.Size = new System.Drawing.Size(273, 78);
+            this.btnDeleteGuest.Size = new System.Drawing.Size(307, 70);
             this.btnDeleteGuest.TabIndex = 4;
             this.btnDeleteGuest.Text = "Delete This Guest";
             this.btnDeleteGuest.UseVisualStyleBackColor = true;
@@ -428,44 +450,48 @@ namespace CMPG_223_PROJECT_GROUP35
             // lstGuestOutput
             // 
             this.lstGuestOutput.FormattingEnabled = true;
-            this.lstGuestOutput.ItemHeight = 16;
-            this.lstGuestOutput.Location = new System.Drawing.Point(27, 74);
+            this.lstGuestOutput.ItemHeight = 20;
+            this.lstGuestOutput.Location = new System.Drawing.Point(30, 92);
+            this.lstGuestOutput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lstGuestOutput.Name = "lstGuestOutput";
-            this.lstGuestOutput.Size = new System.Drawing.Size(715, 116);
+            this.lstGuestOutput.Size = new System.Drawing.Size(804, 144);
             this.lstGuestOutput.TabIndex = 3;
             // 
             // btnSearchGuest
             // 
-            this.btnSearchGuest.Location = new System.Drawing.Point(667, 32);
+            this.btnSearchGuest.Location = new System.Drawing.Point(750, 40);
+            this.btnSearchGuest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchGuest.Name = "btnSearchGuest";
-            this.btnSearchGuest.Size = new System.Drawing.Size(75, 25);
+            this.btnSearchGuest.Size = new System.Drawing.Size(84, 31);
             this.btnSearchGuest.TabIndex = 2;
             this.btnSearchGuest.Text = "Search";
             this.btnSearchGuest.UseVisualStyleBackColor = true;
             // 
             // txtSearchGuest
             // 
-            this.txtSearchGuest.Location = new System.Drawing.Point(147, 32);
+            this.txtSearchGuest.Location = new System.Drawing.Point(165, 40);
+            this.txtSearchGuest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchGuest.Name = "txtSearchGuest";
-            this.txtSearchGuest.Size = new System.Drawing.Size(514, 22);
+            this.txtSearchGuest.Size = new System.Drawing.Size(578, 26);
             this.txtSearchGuest.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 35);
+            this.label9.Location = new System.Drawing.Point(24, 44);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 17);
+            this.label9.Size = new System.Drawing.Size(135, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Search for Guest:";
             // 
             // FormGuests
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1795, 831);
+            this.ClientSize = new System.Drawing.Size(1946, 1039);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormGuests";
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
