@@ -82,6 +82,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.gbBookDateTime = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,6 +95,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.gbDateTime.SuspendLayout();
+            this.gbBookDateTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -151,14 +153,11 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.gbBookDateTime);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.groupBox2);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.monthCalendar1);
             this.groupBox3.Location = new System.Drawing.Point(170, 294);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(563, 400);
@@ -201,7 +200,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(255, 289);
+            this.label5.Location = new System.Drawing.Point(6, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 17);
             this.label5.TabIndex = 11;
@@ -258,7 +257,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(255, 30);
+            this.label4.Location = new System.Drawing.Point(6, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 17);
             this.label4.TabIndex = 10;
@@ -266,14 +265,14 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(258, 332);
+            this.textBox2.Location = new System.Drawing.Point(9, 324);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(154, 22);
             this.textBox2.TabIndex = 9;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(258, 59);
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 51);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 8;
             // 
@@ -620,6 +619,19 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label11.TabIndex = 0;
             this.label11.Text = "Search For Booking ID:";
             // 
+            // gbBookDateTime
+            // 
+            this.gbBookDateTime.Controls.Add(this.label4);
+            this.gbBookDateTime.Controls.Add(this.textBox2);
+            this.gbBookDateTime.Controls.Add(this.monthCalendar1);
+            this.gbBookDateTime.Controls.Add(this.label5);
+            this.gbBookDateTime.Location = new System.Drawing.Point(251, 21);
+            this.gbBookDateTime.Name = "gbBookDateTime";
+            this.gbBookDateTime.Size = new System.Drawing.Size(294, 373);
+            this.gbBookDateTime.TabIndex = 15;
+            this.gbBookDateTime.TabStop = false;
+            this.gbBookDateTime.Text = "DATE/TIME";
+            // 
             // FormBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -648,6 +660,8 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox6.PerformLayout();
             this.gbDateTime.ResumeLayout(false);
             this.gbDateTime.PerformLayout();
+            this.gbBookDateTime.ResumeLayout(false);
+            this.gbBookDateTime.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -707,5 +721,6 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.GroupBox gbBookDateTime;
     }
 }

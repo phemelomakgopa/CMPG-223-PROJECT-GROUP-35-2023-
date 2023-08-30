@@ -36,16 +36,13 @@ namespace CMPG_223_PROJECT_GROUP35
             this.rdoNewGuest = new System.Windows.Forms.RadioButton();
             this.rdoExGuest = new System.Windows.Forms.RadioButton();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtGuestPhoneNum = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnMainRooms = new System.Windows.Forms.Button();
             this.existingGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // existingGB
             // 
             this.existingGB.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.existingGB.Controls.Add(this.label1);
-            this.existingGB.Controls.Add(this.txtGuestPhoneNum);
             this.existingGB.Controls.Add(this.label2);
             this.existingGB.Controls.Add(this.cbChangeGuestInfo);
             this.existingGB.Controls.Add(this.cbBookings);
@@ -116,28 +113,21 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // txtGuestPhoneNum
+            // btnMainRooms
             // 
-            this.txtGuestPhoneNum.Location = new System.Drawing.Point(243, 91);
-            this.txtGuestPhoneNum.Name = "txtGuestPhoneNum";
-            this.txtGuestPhoneNum.Size = new System.Drawing.Size(120, 22);
-            this.txtGuestPhoneNum.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Guest Phone Number:";
+            this.btnMainRooms.Location = new System.Drawing.Point(32, 354);
+            this.btnMainRooms.Name = "btnMainRooms";
+            this.btnMainRooms.Size = new System.Drawing.Size(139, 58);
+            this.btnMainRooms.TabIndex = 4;
+            this.btnMainRooms.Text = "Maintain Rooms";
+            this.btnMainRooms.UseVisualStyleBackColor = true;
             // 
             // FormNewExisting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(480, 435);
+            this.Controls.Add(this.btnMainRooms);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.existingGB);
             this.Controls.Add(this.rdoExGuest);
@@ -160,7 +150,6 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.RadioButton rdoNewGuest;
         private System.Windows.Forms.RadioButton rdoExGuest;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGuestPhoneNum;
+        private System.Windows.Forms.Button btnMainRooms;
     }
 }
