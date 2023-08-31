@@ -35,24 +35,38 @@ namespace CMPG_223_PROJECT_GROUP35
                 fEmail = txtEmail.Text;
                 fPassword = txtPassword.Text;
                 fCellNumber = txtCellNum.Text;
-                if (txtFname.Text.Length < 1 || txtLName.Text.Length < 1 || txtEmail.Text.Length < 1 || txtPassword.Text.Length < 1 || txtCellNum.Text.Length < 10) 
+                
+                if (string.IsNullOrWhiteSpace(fName))
                 {
-                    MessageBox.Show("Please enter valid data.");
+                    MessageBox.Show("Please enter your first name validly.");
+                }
+                else if (string.IsNullOrWhiteSpace(flastname))
+                {
+                    MessageBox.Show("Please enter your last name validly.");
+                }
+                else if (string.IsNullOrWhiteSpace(fEmail))
+                {
+                    MessageBox.Show("Please enter your email validly.");
+                }
+                else if (string.IsNullOrWhiteSpace(fPassword))
+                {
+                    MessageBox.Show("Please enter your password validly.");
+                }
+                else if (string.IsNullOrWhiteSpace(fCellNumber))
+                {
+                    MessageBox.Show("Please enter your cell number validly.");
                 }
                 else
                 {
-                    MessageBox.Show("Receptionists succesfully signed up!\nWelcome to Lehlabile Hotel");
+                    MessageBox.Show("Successfully signed up!");
+                    this.Close();
                 }
-
-
-                
-                this.Close();
+                //MessageBox.Show("Invalid " + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
-
         }
     }
 }
