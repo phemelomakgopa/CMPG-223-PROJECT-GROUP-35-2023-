@@ -63,13 +63,13 @@ namespace CMPG_223_PROJECT_GROUP35
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(195, 307);
+            this.lblError.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(169, 304);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(38, 18);
+            this.lblError.Size = new System.Drawing.Size(205, 21);
             this.lblError.TabIndex = 9;
-            this.lblError.Text = "Error";
+            this.lblError.Text = "Incorrect email or password";
             // 
             // addNewDetailslbl
             // 
@@ -93,6 +93,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbShowPassword.TabIndex = 7;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -101,6 +102,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(353, 22);
             this.txtPassword.TabIndex = 6;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmail
             // 
@@ -109,6 +111,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(420, 22);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label2
             // 

@@ -24,7 +24,8 @@ namespace CMPG_223_PROJECT_GROUP35
         SqlDataReader reader;
         DataSet ds;
         public string conStr;
-        //conn = new SqlConnection(conStr);
+        
+        frmLogIn frmLogIn = new frmLogIn();
 
         private void btnAddNewGuest_Click(object sender, EventArgs e)
         {
@@ -57,16 +58,17 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
+                int guestID = int.Parse(txtGuestID.Text);
                 conn = new SqlConnection(conStr);
                 conn.Open();
-                string SQL = $"UPDATE Guests SET LastName = @surname, EmailAddress = @email, CellNumber = @cellnumber WHERE GuestID = @guestid";
+                string SQL = $"UPDATE Guests SET LastName = @surname, Email_Address = @email, Cellphone_Number = @cellnumber WHERE GuestID = @guestid";
                 comm = new SqlCommand(SQL, conn);
 
                 
                 comm.Parameters.AddWithValue("@surname", txtUpdateSurname.Text);
                 comm.Parameters.AddWithValue("@email", txtUpdateEmail.Text);
                 comm.Parameters.AddWithValue("@cellnumber", txtUpdateNum.Text);
-                comm.Parameters.AddWithValue("@guestid", txtGuestID.Text);
+                comm.Parameters.AddWithValue("@guestid", guestID);
                 comm.ExecuteNonQuery();
 
                 
@@ -153,7 +155,7 @@ namespace CMPG_223_PROJECT_GROUP35
                 {
                     conn.Open();
                 }
-                string query = "SELECT * from Guests WHERE cellnumber LIKE '%" + txtSearchGuest.Text + "%'";
+                string query = "SELECT * FROM Guests WHERE Cellphone_Number LIKE '%" + txtSearchGuest.Text + "%'";
                 comm = new SqlCommand(query, conn);
                 reader = comm.ExecuteReader();
 
@@ -191,7 +193,7 @@ namespace CMPG_223_PROJECT_GROUP35
                 {
                     conn.Open();
                 }
-                string delete = "DELETE FROM Guests WHERE cellnumber =" + lstGuestOutput.SelectedItem;
+                string delete = "DELETE FROM Guests WHERE Guest_ID = " + lstGuestOutput.SelectedItem;
                 comm = new SqlCommand(delete, conn);
                 adap = new SqlDataAdapter();
                 adap.DeleteCommand = comm;
@@ -204,6 +206,11 @@ namespace CMPG_223_PROJECT_GROUP35
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void FormGuests_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,9 +16,10 @@ namespace CMPG_223_PROJECT_GROUP35
         public frmLogIn()
         {
             InitializeComponent();
+            cbShowPassword.Checked = true;  
         }
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\legen\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection conn;
         public SqlCommand comm;
         public SqlDataAdapter adap;
@@ -76,7 +77,7 @@ namespace CMPG_223_PROJECT_GROUP35
 
             try
             {
-                conn = new SqlConnection(ConnectionString);
+                //conn = new SqlConnection(ConnectionString);
                 conn.Open();
                 string insertStatement = $"INSERT INTO Receptionists VALUES(@FirstName,@LastName,@Email_Address,@Cellnumber,@password)";
                 comm = new SqlCommand(insertStatement, conn);
@@ -101,6 +102,21 @@ namespace CMPG_223_PROJECT_GROUP35
         private void frmLogIn_Load(object sender, EventArgs e)
         {
             lblError.Visible = false; // Makes the form invisible when the form loads
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            lblError.Visible=false;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            lblError.Visible = false;
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = cbShowPassword.Checked;
         }
     }
 }
