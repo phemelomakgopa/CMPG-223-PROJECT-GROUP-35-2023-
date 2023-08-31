@@ -58,7 +58,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbRoomType = new System.Windows.Forms.CheckBox();
             this.btnChangeInfo = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtUpdateSearch = new System.Windows.Forms.TextBox();
+            this.txtRoomIDRemove = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnRemoveRoom = new System.Windows.Forms.Button();
@@ -225,7 +225,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox2.Controls.Add(this.GBchange);
             this.groupBox2.Controls.Add(this.btnChangeInfo);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtUpdateSearch);
+            this.groupBox2.Controls.Add(this.txtRoomIDRemove);
             this.groupBox2.Location = new System.Drawing.Point(24, 14);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -384,13 +384,13 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label6.TabIndex = 1;
             this.label6.Text = "Room ID:";
             // 
-            // txtUpdateSearch
+            // txtRoomIDRemove
             // 
-            this.txtUpdateSearch.Location = new System.Drawing.Point(152, 47);
-            this.txtUpdateSearch.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUpdateSearch.Name = "txtUpdateSearch";
-            this.txtUpdateSearch.Size = new System.Drawing.Size(254, 20);
-            this.txtUpdateSearch.TabIndex = 0;
+            this.txtRoomIDRemove.Location = new System.Drawing.Point(152, 47);
+            this.txtRoomIDRemove.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRoomIDRemove.Name = "txtRoomIDRemove";
+            this.txtRoomIDRemove.Size = new System.Drawing.Size(254, 20);
+            this.txtRoomIDRemove.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -493,7 +493,7 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnChangeInfo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtUpdateSearch;
+        private System.Windows.Forms.TextBox txtRoomIDRemove;
         private System.Windows.Forms.GroupBox GBchange;
         private System.Windows.Forms.CheckBox cbUpdateCapacity;
         private System.Windows.Forms.CheckBox cbUpdatePrice;

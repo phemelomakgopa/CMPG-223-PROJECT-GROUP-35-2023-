@@ -114,9 +114,74 @@ namespace CMPG_223_PROJECT_GROUP35
 
         private void btnChangeInfo_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (frmLogIn.conn.State == ConnectionState.Closed)
+                {
+                    frmLogIn.conn.Open();
+                }
 
+                if (txtRoomIDRemove.Text != "")
+                {
+                    if (cbRoomType.Checked)
+                    {
+                        lblRoomType.Enabled = true;
+                        txtUpdateType.Enabled = true;
+
+                        string update = $"UPDATE Rooms SET Room_Type = @roomType WHERE Room_ID = @roomID";
+                        frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@roomType", txtRoomType.Text);
+                        frmLogIn.comm.Parameters.AddWithValue("@roomID", txtRoomIDRemove.Text);
+                        frmLogIn.comm.ExecuteNonQuery();
+                        frmLogIn.conn.Close();
+                    }
+                    if (cbUpdatePrice.Checked)
+                    {
+                        lblRoomPrice.Enabled = true;
+                        txtUpdatePrice.Enabled = true;
+                        string update = "UPDATE Rooms SET Price = @roomPrice WHERE Room_ID = @roomID";
+                        frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@roomPrice", txtUpdatePrice.Text);
+                        frmLogIn.comm.Parameters.AddWithValue("@roomID", txtRoomIDRemove.Text);
+                        frmLogIn.comm.ExecuteNonQuery();
+                        frmLogIn.conn.Close();
+                    }
+                    if (cbUpdateDescr.Checked)
+                    {
+                        lblDescr.Enabled = true;
+                        txtUpdateDescr.Enabled = true;
+                        string update = "UPDATE Rooms SET Description = @descr WHERE Room_ID = @roomID";
+                        frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@descr", txtUpdateDescr.Text);
+                        frmLogIn.comm.Parameters.AddWithValue("@roomID", txtRoomIDRemove.Text);
+                        frmLogIn.comm.ExecuteNonQuery();
+                        frmLogIn.conn.Close();
+                    }
+                    if (cbUpdateCapacity.Checked)
+                    {
+                        lblCapacity.Enabled = true;
+                        cmbUpdateCapacity.Enabled = true;
+                        string update = "UPDATE Rooms SET Capacity = @capacity WHERE Room_ID = @roomID";
+                        frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@capacity", cmbUpdateCapacity.SelectedValue);
+                        frmLogIn.comm.Parameters.AddWithValue("@roomID", txtRoomIDRemove.Text);
+                        frmLogIn.comm.ExecuteNonQuery();
+                        frmLogIn.conn.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Provide the room_ID to make changes");
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+    }
 
         
     }
-}
+
