@@ -43,10 +43,8 @@ namespace CMPG_223_PROJECT_GROUP35
             try
             {
 
-                if (frmLogIn.conn.State == ConnectionState.Closed)
-                {
-                    frmLogIn.conn.Open();
-                }
+                frmLogIn.conn.Open();
+
                 string sql_InsertData = "INSERT INTO Rooms VALUES ('{RoomType}',{roomPrice},'{roomDescr.Text}') " + cmbCapacity.SelectedValue + "'";
                
                 
@@ -55,7 +53,7 @@ namespace CMPG_223_PROJECT_GROUP35
                 frmLogIn.adap.SelectCommand = frmLogIn.comm;
                 frmLogIn.adap.InsertCommand.ExecuteNonQuery();
 
-                MessageBox.Show("Data succeffuly inserted");
+                MessageBox.Show("Room successfully inserted!");
 
 
                 frmLogIn.conn.Close();
@@ -139,7 +137,7 @@ namespace CMPG_223_PROJECT_GROUP35
                     {
                         lblRoomPrice.Enabled = true;
                         txtUpdatePrice.Enabled = true;
-                        string update = "UPDATE Rooms SET Price = @roomPrice WHERE Room_ID = @roomID";
+                        string update = "UPDATE Rooms SET Room_Price = @roomPrice WHERE Room_ID = @roomID";
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
                         frmLogIn.comm.Parameters.AddWithValue("@roomPrice", txtUpdatePrice.Text);
                         frmLogIn.comm.Parameters.AddWithValue("@roomID", txtRoomIDRemove.Text);
@@ -161,7 +159,7 @@ namespace CMPG_223_PROJECT_GROUP35
                     {
                         lblCapacity.Enabled = true;
                         cmbUpdateCapacity.Enabled = true;
-                        string update = "UPDATE Rooms SET Capacity = @capacity WHERE Room_ID = @roomID";
+                        string update = "UPDATE Rooms SET Room_Capacity = @capacity WHERE Room_ID = @roomID";
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
                         frmLogIn.comm.Parameters.AddWithValue("@capacity", cmbUpdateCapacity.SelectedValue);
                         frmLogIn.comm.Parameters.AddWithValue("@roomID", txtRoomIDRemove.Text);

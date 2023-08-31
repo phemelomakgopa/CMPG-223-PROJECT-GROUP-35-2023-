@@ -18,7 +18,7 @@ namespace CMPG_223_PROJECT_GROUP35
             InitializeComponent();
         }
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\legen\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection conn;
         public SqlCommand comm;
         public SqlDataAdapter adap;
@@ -50,29 +50,29 @@ namespace CMPG_223_PROJECT_GROUP35
         //CheckAdminDetails method checks if the user entered corrrect log in details
         private bool CheckAdminDetails(string username, string password)
         {
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
-            {
-                conn.Open(); // Open connection
+            conn = new SqlConnection(ConnectionString);
+            
+            conn.Open(); // Open connection
 
-                string sqlStatement = "SELECT COUNT(*) FROM Receptionists WHERE Email_Address = @Username AND Password = @Password";
+            string sqlStatement = "SELECT COUNT(*) FROM Receptionists WHERE Email_Address = @Username AND Password = @Password";
 
-                using (SqlCommand comm = new SqlCommand(sqlStatement, conn))
-                {
-                    comm.Parameters.AddWithValue("@Username", username);
-                    comm.Parameters.AddWithValue("@Password", password);
+            comm = new SqlCommand(sqlStatement, conn);
+                
+            comm.Parameters.AddWithValue("@Username", username);
+            comm.Parameters.AddWithValue("@Password", password);
 
-                    int count = Convert.ToInt32(comm.ExecuteScalar());
+            int count = Convert.ToInt32(comm.ExecuteScalar());
 
-                    return count > 0;
-                }
-            } // Connection automatically closed when leaving the using block
+            conn.Close();
+
+            return count > 0;               
         }
 
 
         private void addNewDetailslbl_Click(object sender, EventArgs e)
         {
             FormSignUp signUpWindow = new FormSignUp();
-            signUpWindow.ShowDialog();//Make the sign up form appear
+            signUpWindow.ShowDialog();                  //Make the sign up form appear
 
             try
             {
