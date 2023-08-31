@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,23 +18,40 @@ namespace CMPG_223_PROJECT_GROUP35
             InitializeComponent();
         }
 
+        // Declaring public variables to store the user inputs
+        public string fName;
+        public string flastname;
+        public string fEmail;
+        public string fPassword;
+        public string fCellNumber;
+
         private void btnSignUp_Click(object sender, EventArgs e)
         {
             try
             {
-                string name = txtFname.Text;
-                string lastname = txtLName.Text;
-                string email = txtEmail.Text;
-                string newPassword = txtPassword.Text;
-                int cellNum = int.Parse(txtCellNum.Text);
 
-                MessageBox.Show("Receptionist successfully signed up.");
+                fName = txtFname.Text;
+                flastname = txtLName.Text;
+                fEmail = txtEmail.Text;
+                fPassword = txtPassword.Text;
+                fCellNumber = txtCellNum.Text;
+                if (txtFname.Text.Length < 1 || txtLName.Text.Length < 1 || txtEmail.Text.Length < 1 || txtPassword.Text.Length < 1 || txtCellNum.Text.Length < 10) 
+                {
+                    MessageBox.Show("Please enter valid data.");
+                }
+                else
+                {
+                    MessageBox.Show("Receptionists succesfully signed up!\nWelcome to Lehlabile Hotel");
+                }
+
+
+                
+                this.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Oops, something went wrong.");
+                MessageBox.Show("Invalid " + ex.Message);
             }
-
 
         }
     }
