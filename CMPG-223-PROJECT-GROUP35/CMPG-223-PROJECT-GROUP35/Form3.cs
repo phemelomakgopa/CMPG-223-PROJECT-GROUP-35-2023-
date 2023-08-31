@@ -19,6 +19,9 @@ namespace CMPG_223_PROJECT_GROUP35
             
         }
 
+        //
+        frmLogIn frmLogIn = new frmLogIn();
+
         private void Form3_Load(object sender, EventArgs e)
         {
             lblRoomType.Enabled = false;
@@ -31,49 +34,40 @@ namespace CMPG_223_PROJECT_GROUP35
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
+            //
             string RoomType = txtRoomType.Text;
-            int roomNum = int.Parse(txtRoomNum.Text);
-            double roomPrice = 0;
+            decimal roomPrice = decimal.Parse(txtRoomPrice.Text);
             string roomDescr = txtRoomDescr.Text;
 
-            if (RoomType == "Standard")
+
+            try
             {
-                if (cmbUpdateCapacity.SelectedIndex > 5)
+
+                if (frmLogIn.conn.State == ConnectionState.Closed)
                 {
-                    roomPrice = 150+(roomNum * cmbUpdateCapacity.SelectedIndex) * 20 / 100;
+                    frmLogIn.conn.Open();
                 }
-                else if (cmbUpdateCapacity.SelectedIndex == 2)
-                {
-                    roomPrice = 275+(roomNum * cmbUpdateCapacity.SelectedIndex) * 7 / 100;
-                }
-                else
-                {
-                    roomPrice = 420+(roomNum * cmbUpdateCapacity.SelectedIndex);
-                }
+                string sql_InsertData = "INSERT INTO Rooms VALUES ('{RoomType}',{roomPrice},'{roomDescr.Text}') " + cmbCapacity.SelectedValue + "'";
+               
+                
+                frmLogIn.adap = new SqlDataAdapter();
+                frmLogIn.comm = new SqlCommand(sql_InsertData, frmLogIn.conn);
+                frmLogIn.adap.SelectCommand = frmLogIn.comm;
+                frmLogIn.adap.InsertCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Data succeffuly inserted");
+
+
+                frmLogIn.conn.Close();
             }
-           else if(RoomType == "5-Star")
+            catch (Exception er)
             {
-                if (cmbUpdateCapacity.SelectedIndex > 5)
-                {
-                    roomPrice = 600 + (roomNum * cmbUpdateCapacity.SelectedIndex);
-                }
-                else if (cmbUpdateCapacity.SelectedIndex == 2)
-                {
-                    roomPrice = 1000 + (roomNum * cmbUpdateCapacity.SelectedIndex);
-                }
-                else
-                {
-                    roomPrice = 1500+(roomNum * cmbUpdateCapacity.SelectedIndex);
-                }
+                MessageBox.Show("Error: " + er.ToString());
             }
-           else
-            {
-                if(cmbUpdateCapacity.SelectedIndex == 2 && RoomType == "HoneyMoon_Room")
-                {
-                    roomPrice = 780;
-                }
-            }
-            
+
+
+
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -93,7 +87,7 @@ namespace CMPG_223_PROJECT_GROUP35
                     conn.Open();
                 }
 
-                string removeRoom = "DELETE FROM Rooms WHERE RoomID LIKE'"+deleteRoom.Text+"'";
+                string removeRoom = "DELETE FROM Rooms WHERE Room_ID = '" + deleteRoom.Text + "'";
                 SqlCommand command = new SqlCommand(removeRoom,conn);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.DeleteCommand = command;
@@ -122,5 +116,7 @@ namespace CMPG_223_PROJECT_GROUP35
         {
 
         }
+
+        
     }
 }
