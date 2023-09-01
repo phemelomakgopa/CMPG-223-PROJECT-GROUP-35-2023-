@@ -28,19 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstbxReports = new System.Windows.Forms.ListBox();
             this.btnDone = new System.Windows.Forms.Button();
             this.btnShowBookings = new System.Windows.Forms.Button();
+            this.reportsDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstbxReports
-            // 
-            this.lstbxReports.FormattingEnabled = true;
-            this.lstbxReports.ItemHeight = 16;
-            this.lstbxReports.Location = new System.Drawing.Point(59, 36);
-            this.lstbxReports.Name = "lstbxReports";
-            this.lstbxReports.Size = new System.Drawing.Size(810, 340);
-            this.lstbxReports.TabIndex = 0;
             // 
             // btnDone
             // 
@@ -62,25 +54,35 @@
             this.btnShowBookings.UseVisualStyleBackColor = true;
             this.btnShowBookings.Click += new System.EventHandler(this.btnShowBookings_Click);
             // 
+            // reportsDataGridView
+            // 
+            this.reportsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.reportsDataGridView.Location = new System.Drawing.Point(35, 45);
+            this.reportsDataGridView.Name = "reportsDataGridView";
+            this.reportsDataGridView.RowHeadersWidth = 51;
+            this.reportsDataGridView.RowTemplate.Height = 24;
+            this.reportsDataGridView.Size = new System.Drawing.Size(834, 365);
+            this.reportsDataGridView.TabIndex = 3;
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 529);
+            this.Controls.Add(this.reportsDataGridView);
             this.Controls.Add(this.btnShowBookings);
             this.Controls.Add(this.btnDone);
-            this.Controls.Add(this.lstbxReports);
             this.Name = "Reports";
             this.Text = "Reports";
             this.Load += new System.EventHandler(this.Reports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.reportsDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstbxReports;
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.Button btnShowBookings;
+        private System.Windows.Forms.DataGridView reportsDataGridView;
     }
 }

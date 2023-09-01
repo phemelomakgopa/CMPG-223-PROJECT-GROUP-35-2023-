@@ -22,6 +22,17 @@ namespace CMPG_223_PROJECT_GROUP35
         //
         frmLogIn frmLogIn = new frmLogIn();
 
+
+        private void updateRoomsSQL(string sql, string property)
+        {       
+            int RoomID = int.Parse(txtRoomIDRemove.Text);
+
+            frmLogIn.comm = new SqlCommand(sql, frmLogIn.conn);
+            frmLogIn.comm.Parameters.AddWithValue("@roomType", property);
+            frmLogIn.comm.Parameters.AddWithValue("@roomID", RoomID);
+            frmLogIn.comm.ExecuteNonQuery();
+            frmLogIn.conn.Close();
+        }
         private void displayRooms()
         {
             try
@@ -107,9 +118,6 @@ namespace CMPG_223_PROJECT_GROUP35
                 MessageBox.Show("Error: " + er.ToString());
             }
 
-
-
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -176,11 +184,14 @@ namespace CMPG_223_PROJECT_GROUP35
                         txtUpdateType.Enabled = true;
 
                         string update = $"UPDATE Rooms SET Room_Type = @roomType WHERE Room_ID = @roomID";
+                        updateRoomsSQL(update, txtUpdateType.Text);
+                        /*
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
                         frmLogIn.comm.Parameters.AddWithValue("@roomType", txtUpdateType.Text);
                         frmLogIn.comm.Parameters.AddWithValue("@roomID", RoomID);
                         frmLogIn.comm.ExecuteNonQuery();
                         frmLogIn.conn.Close();
+                        */
                     }
                     if (cbUpdatePrice.Checked)
                     {

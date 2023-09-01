@@ -30,8 +30,8 @@ namespace CMPG_223_PROJECT_GROUP35
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLblAddNewUser = new System.Windows.Forms.LinkLabel();
             this.lblError = new System.Windows.Forms.Label();
-            this.addNewDetailslbl = new System.Windows.Forms.Label();
             this.cbShowPassword = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -43,50 +43,50 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLblAddNewUser);
             this.groupBox1.Controls.Add(this.lblError);
-            this.groupBox1.Controls.Add(this.addNewDetailslbl);
             this.groupBox1.Controls.Add(this.cbShowPassword);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(248, 99);
+            this.groupBox1.Location = new System.Drawing.Point(274, 288);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(552, 505);
+            this.groupBox1.Size = new System.Drawing.Size(552, 322);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
+            // 
+            // linkLblAddNewUser
+            // 
+            this.linkLblAddNewUser.AutoSize = true;
+            this.linkLblAddNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLblAddNewUser.Location = new System.Drawing.Point(146, 206);
+            this.linkLblAddNewUser.Name = "linkLblAddNewUser";
+            this.linkLblAddNewUser.Size = new System.Drawing.Size(235, 17);
+            this.linkLblAddNewUser.TabIndex = 10;
+            this.linkLblAddNewUser.TabStop = true;
+            this.linkLblAddNewUser.Text = "New Receptionist? Add Your Details";
+            this.linkLblAddNewUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblAddNewUser_LinkClicked);
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(169, 304);
+            this.lblError.Location = new System.Drawing.Point(145, 162);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(205, 21);
             this.lblError.TabIndex = 9;
             this.lblError.Text = "Incorrect email or password";
             // 
-            // addNewDetailslbl
-            // 
-            this.addNewDetailslbl.AutoSize = true;
-            this.addNewDetailslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewDetailslbl.Location = new System.Drawing.Point(169, 387);
-            this.addNewDetailslbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.addNewDetailslbl.Name = "addNewDetailslbl";
-            this.addNewDetailslbl.Size = new System.Drawing.Size(235, 17);
-            this.addNewDetailslbl.TabIndex = 8;
-            this.addNewDetailslbl.Text = "New Receptionist? Add Your Details";
-            this.addNewDetailslbl.Click += new System.EventHandler(this.addNewDetailslbl_Click);
-            // 
             // cbShowPassword
             // 
             this.cbShowPassword.AutoSize = true;
-            this.cbShowPassword.Location = new System.Drawing.Point(413, 226);
+            this.cbShowPassword.Location = new System.Drawing.Point(387, 116);
             this.cbShowPassword.Margin = new System.Windows.Forms.Padding(4);
             this.cbShowPassword.Name = "cbShowPassword";
             this.cbShowPassword.Size = new System.Drawing.Size(125, 20);
@@ -97,7 +97,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(51, 223);
+            this.txtPassword.Location = new System.Drawing.Point(25, 113);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(353, 22);
@@ -106,7 +106,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(51, 102);
+            this.txtEmail.Location = new System.Drawing.Point(24, 49);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(420, 22);
@@ -117,7 +117,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 81);
+            this.label2.Location = new System.Drawing.Point(20, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 18);
@@ -126,7 +126,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(51, 417);
+            this.btnLogin.Location = new System.Drawing.Point(28, 243);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(468, 55);
@@ -139,7 +139,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 203);
+            this.label1.Location = new System.Drawing.Point(21, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 18);
             this.label1.TabIndex = 0;
@@ -164,7 +164,6 @@ namespace CMPG_223_PROJECT_GROUP35
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label addNewDetailslbl;
         private System.Windows.Forms.CheckBox cbShowPassword;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtEmail;
@@ -172,6 +171,7 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.LinkLabel linkLblAddNewUser;
     }
 }
 

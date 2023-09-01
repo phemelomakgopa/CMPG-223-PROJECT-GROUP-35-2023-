@@ -57,10 +57,10 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFname);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(232, 13);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(190, 87);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(479, 498);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -68,8 +68,8 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Location = new System.Drawing.Point(91, 397);
-            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignUp.Location = new System.Drawing.Point(78, 352);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(280, 53);
             this.btnSignUp.TabIndex = 10;
@@ -79,8 +79,8 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtCellNum
             // 
-            this.txtCellNum.Location = new System.Drawing.Point(37, 331);
-            this.txtCellNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCellNum.Location = new System.Drawing.Point(37, 144);
+            this.txtCellNum.Margin = new System.Windows.Forms.Padding(4);
             this.txtCellNum.Name = "txtCellNum";
             this.txtCellNum.Size = new System.Drawing.Size(391, 22);
             this.txtCellNum.TabIndex = 9;
@@ -88,7 +88,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 299);
+            this.label5.Location = new System.Drawing.Point(33, 112);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 16);
@@ -97,8 +97,8 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(37, 245);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(37, 285);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(391, 22);
             this.txtPassword.TabIndex = 7;
@@ -106,7 +106,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 225);
+            this.label4.Location = new System.Drawing.Point(33, 265);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 16);
@@ -115,8 +115,8 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(37, 174);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Location = new System.Drawing.Point(37, 214);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(377, 22);
             this.txtEmail.TabIndex = 5;
@@ -124,7 +124,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 143);
+            this.label3.Location = new System.Drawing.Point(33, 183);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(171, 16);
@@ -134,7 +134,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtLName
             // 
             this.txtLName.Location = new System.Drawing.Point(207, 73);
-            this.txtLName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(208, 22);
             this.txtLName.TabIndex = 3;
@@ -152,7 +152,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtFname
             // 
             this.txtFname.Location = new System.Drawing.Point(37, 73);
-            this.txtFname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFname.Margin = new System.Windows.Forms.Padding(4);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(160, 22);
             this.txtFname.TabIndex = 1;
@@ -171,7 +171,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1726, 800);
+            this.ClientSize = new System.Drawing.Size(833, 707);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSignUp";

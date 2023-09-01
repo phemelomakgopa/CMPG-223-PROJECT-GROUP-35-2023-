@@ -58,14 +58,14 @@ namespace CMPG_223_PROJECT_GROUP35
                 }
                 else
                 {
-                    MessageBox.Show("Successfully signed up!");
+                    MessageBox.Show(txtFname.Text + " " + txtLName.Text + " has uccessfully signed up!\nWelcome to Lehlabile Hotel\nYou may proceed to log in");
                     this.Close();
                 }
-                //MessageBox.Show("Invalid " + ex.Message);
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Oops! There was an error\n" + ex.Message);
             }
         }
     }
