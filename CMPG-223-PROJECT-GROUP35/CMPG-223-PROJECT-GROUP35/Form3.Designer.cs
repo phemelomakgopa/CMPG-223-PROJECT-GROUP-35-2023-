@@ -376,7 +376,6 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbUpdateCapacity.TabIndex = 2;
             this.cbUpdateCapacity.Text = "Room Capacity";
             this.cbUpdateCapacity.UseVisualStyleBackColor = true;
-            this.cbUpdateCapacity.CheckedChanged += new System.EventHandler(this.cbUpdateCapacity_CheckedChanged);
             // 
             // cbUpdatePrice
             // 
@@ -388,7 +387,6 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbUpdatePrice.TabIndex = 1;
             this.cbUpdatePrice.Text = "Room Price";
             this.cbUpdatePrice.UseVisualStyleBackColor = true;
-            this.cbUpdatePrice.CheckedChanged += new System.EventHandler(this.cbUpdatePrice_CheckedChanged);
             // 
             // cbRoomType
             // 
@@ -400,7 +398,6 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbRoomType.TabIndex = 0;
             this.cbRoomType.Text = "Room Type";
             this.cbRoomType.UseVisualStyleBackColor = true;
-            this.cbRoomType.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btnChangeInfo
             // 

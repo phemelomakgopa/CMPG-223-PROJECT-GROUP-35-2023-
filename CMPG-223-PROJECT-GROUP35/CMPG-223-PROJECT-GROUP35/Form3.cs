@@ -19,20 +19,9 @@ namespace CMPG_223_PROJECT_GROUP35
             
         }
 
-        //
+        
         frmLogIn frmLogIn = new frmLogIn();
 
-
-        private void updateRoomsSQL(string sql, string property)
-        {       
-            int RoomID = int.Parse(txtRoomIDRemove.Text);
-
-            frmLogIn.comm = new SqlCommand(sql, frmLogIn.conn);
-            frmLogIn.comm.Parameters.AddWithValue("@roomType", property);
-            frmLogIn.comm.Parameters.AddWithValue("@roomID", RoomID);
-            frmLogIn.comm.ExecuteNonQuery();
-            frmLogIn.conn.Close();
-        }
         private void displayRooms()
         {
             try
@@ -49,15 +38,7 @@ namespace CMPG_223_PROJECT_GROUP35
                 frmLogIn.adap.SelectCommand = frmLogIn.comm;
                 frmLogIn.adap.Fill(frmLogIn.ds, "Rooms");
 
-                changedRooms.DataSource = frmLogIn.ds;
-                changedRooms.DataMember = "Rooms";
-
-                addedRooms.DataSource = frmLogIn.ds;
-                addedRooms.DataMember = "Rooms";
-
-                roomsDataGridView.DataSource = frmLogIn.ds;
-                roomsDataGridView.DataMember = "Rooms";
-
+                
                 frmLogIn.conn.Close();
             }
             catch(SqlException ex)
@@ -68,7 +49,7 @@ namespace CMPG_223_PROJECT_GROUP35
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // Displaying rooms to the user
+            //Displaying rooms
             displayRooms();
 
             // Disabling controls
@@ -89,7 +70,6 @@ namespace CMPG_223_PROJECT_GROUP35
             decimal roomPrice = decimal.Parse(txtRoomPrice.Text);
             string roomDescr = txtRoomDescr.Text;
             int roomCap = cmbCapacity.SelectedIndex + 1;
-
 
             try
             {
@@ -120,12 +100,6 @@ namespace CMPG_223_PROJECT_GROUP35
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            lblRoomType.Enabled = true;
-            txtUpdateType.Enabled = true;
-        }
-
         private void btnRemoveRoom_Click(object sender, EventArgs e)
         {
             try
@@ -152,18 +126,6 @@ namespace CMPG_223_PROJECT_GROUP35
             }
         }
 
-        private void cbUpdatePrice_CheckedChanged(object sender, EventArgs e)
-        {
-            lblRoomPrice.Enabled = true;
-            txtUpdatePrice.Enabled = true;
-        }
-
-        private void cbUpdateCapacity_CheckedChanged(object sender, EventArgs e)
-        {
-            lblCapacity.Enabled = true;
-            cmbUpdateCapacity.Enabled = true;
-        }
-
         private void btnChangeInfo_Click(object sender, EventArgs e)
         {
             try
@@ -184,14 +146,13 @@ namespace CMPG_223_PROJECT_GROUP35
                         txtUpdateType.Enabled = true;
 
                         string update = $"UPDATE Rooms SET Room_Type = @roomType WHERE Room_ID = @roomID";
-                        updateRoomsSQL(update, txtUpdateType.Text);
-                        /*
+                        
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
                         frmLogIn.comm.Parameters.AddWithValue("@roomType", txtUpdateType.Text);
                         frmLogIn.comm.Parameters.AddWithValue("@roomID", RoomID);
                         frmLogIn.comm.ExecuteNonQuery();
                         frmLogIn.conn.Close();
-                        */
+                        
                     }
                     if (cbUpdatePrice.Checked)
                     {

@@ -19,7 +19,7 @@ namespace CMPG_223_PROJECT_GROUP35
             InitializeComponent(); 
         }
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\legen\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection conn;
         public SqlCommand comm;
         public SqlDataAdapter adap;
@@ -71,6 +71,9 @@ namespace CMPG_223_PROJECT_GROUP35
             String username = txtEmail.Text.Trim();
             String password = txtPassword.Text.Trim();
           
+            
+            
+           ///*
             if (username == "Manager1@lehlabilehotel.co.za")
             {
                 // Calling the isManager method to check whether it is the manager who is logging in
