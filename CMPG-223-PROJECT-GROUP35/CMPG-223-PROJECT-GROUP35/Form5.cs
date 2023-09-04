@@ -18,54 +18,150 @@ namespace CMPG_223_PROJECT_GROUP35
             InitializeComponent();
         }
         frmLogIn connection = new frmLogIn();
-        
-        private void txtSearchGuest_TextChanged(object sender, EventArgs e)
+
+        string roomPrice;
+        string roomType;
+        string RoomID;
+
+ 
+        public void displayBookings()
         {
             try
             {
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
-                string search = "SELECT * FROM Guests WHERE Cellphone_Number LIKE'%" + txtSearchGuest.Text + "%'";
-                connection.comm = new SqlCommand(search, connection.conn);
+                connection.conn = new SqlConnection(connection.ConnectionString);
+                connection.conn.Open();
+
+                string sql = "SELECT * FROM Bookings";
+
+                connection.comm = new SqlCommand(sql, connection.conn);
+
                 connection.adap = new SqlDataAdapter();
-                DataSet ds = new DataSet();
-                connection.adap.Fill(ds, "searchG");
-                displayGuest.DataSource = ds;
-                displayGuest.DataMember = "searchG";
+                connection.ds = new DataSet();
+
+                connection.adap.SelectCommand = connection.comm;
+                connection.adap.Fill(connection.ds, "Bookings");
+
+                displayCheckin.DataSource = connection.ds;
+                displayCheckin.DataMember = "Bookings";
 
                 connection.conn.Close();
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Oops! An Error has occured\n" + ex.Message);
             }
+        }
+
+        private void getRoomPrice(string type)
+        {
+            try
+            {
+                
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
+
+                string name = "SELECT * FROM Rooms WHERE Room_Type = '" + type + "'";
+                connection.comm = new SqlCommand(name, connection.conn);
+                connection.reader = connection.comm.ExecuteReader();
+
+                while (connection.reader.Read())
+                {
+                    RoomID = connection.reader.GetValue(0).ToString();
+                    roomPrice = connection.reader.GetValue(2).ToString();
+                }
+
+
+                connection.conn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Oops! An error has occured\n" + ex.Message);
+            }
+
+        
+        }
+
+        private void displayGuests(string sql)
+        {
+            try
+            {
+                connection.conn = new SqlConnection(connection.ConnectionString);
+                connection.conn.Open();
+
+                connection.comm = new SqlCommand(sql, connection.conn);
+
+                connection.adap = new SqlDataAdapter();
+                connection.ds = new DataSet();
+
+                connection.adap.SelectCommand = connection.comm;
+                connection.adap.Fill(connection.ds, "Guests");
+
+                displayGuest.DataSource = connection.ds;
+                displayGuest.DataMember = "Guests";
+
+                connection.conn.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Oops! An Error has occured\n" + ex.Message);
+            }
+        }
+
+        private void txtSearchGuest_TextChanged(object sender, EventArgs e)
+        {
+            string sql = "SELECT * FROM Guests WHERE Cellphone_Number LIKE'%" + txtSearchGuest.Text + "%'";
+
+            displayGuests(sql);
         }
 
         private void FormBookings_Load(object sender, EventArgs e)
         {
-            comboTransaction.Items.Add("EFT");
-            comboTransaction.Items.Add("CASH");
-
-            if (connection.conn.State == ConnectionState.Closed)
+            try
             {
+                datePickerCheckIn.Format = DateTimePickerFormat.Custom;
+                datePickerCheckIn.CustomFormat = "dd/MM/yyyy";
+
+                dateTimeChckInMan.Format = DateTimePickerFormat.Custom;
+                dateTimeChckInMan.CustomFormat = "dd/MM/yyyy";
+
+                dateTimePickerChkOut.Format = DateTimePickerFormat.Custom;
+                dateTimePickerChkOut.CustomFormat = "dd/MM/yyyy";
+
+                string sql = "SELECT * FROM Guests";
+
+                displayGuests(sql);
+                displayBookings();
+
+                comboTransaction.Items.Add("EFT");
+                comboTransaction.Items.Add("CASH");
+
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
                 connection.conn.Open();
+
+                connection.adap = new SqlDataAdapter();
+                connection.ds = new DataSet();
+
+                string combo = "SELECT  Room_Type FROM Rooms";
+                connection.comm = new SqlCommand(combo, connection.conn);
+                connection.adap.SelectCommand = connection.comm;
+
+                connection.adap.Fill(connection.ds, "Room_Type");
+                cmbRoomType.DisplayMember = "Room_Type";
+                cmbRoomType.ValueMember = "Room_Type";
+                cmbRoomType.DataSource = connection.ds.Tables["Rooms"];
+
+                connection.conn.Close();
+
+                lblRecID.Text = connection.getReceptionistID().ToString();
+
             }
-
-            string combo = "SELECT DISTINCT RoomType FROM Bookings";
-            connection.comm = new SqlCommand(combo, connection.conn);
-            DataSet ds = new DataSet();
-            connection.adap = new SqlDataAdapter();
-            connection.adap.Fill(ds, "Rooms");
-            cmbRoomType.DisplayMember = "Room_Type";
-            cmbRoomType.ValueMember = "Room_Type";
-            cmbRoomType.DataSource = ds.Tables["Rooms"];
-            connection.conn.Close();
-
-            lstBookingInfo.Items.Clear();
-            monthCalendar.SelectionStart = DateTime.Today;
-            numericUDcap.Maximum = 6;
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Oops! An error has occured" + ex.Message);
+            }
 
         }
 
@@ -76,41 +172,64 @@ namespace CMPG_223_PROJECT_GROUP35
             {
                 if (rdbtnNow.Checked)
                 {
-                    gbBookDateTime.Enabled = false;
-                    tabControl1.SelectedTab = tabPage2;
-                }
+                    datePickerCheckIn.Enabled = true;
+                    txtCheckTime.Enabled = true;
+                    lblDate.Enabled = true;
+                    lblTime.Enabled = true;
 
-                else if (rdbtnAnotherTime.Checked)
-                {
-                    gbBookDateTime.Enabled = true;
-                    if (connection.conn.State == ConnectionState.Closed)
-                    {
-                        connection.conn.Open();
-                    }
-                    string insert = "INSERT INTO Bookings VALUES (@guestID, @recepID, @roomId,@checkiD,@checkinT,@checkoutD,@checkoutT,@capacity)";
+                    txtCheckTime.Text = "";
+                    dateTimeChckInMan.Text = "";
+
+                    txtCheckOutTime.Text = "";
+                    dateTimePickerChkOut.Text = "";
+
+                    connection.conn = new SqlConnection(connection.ConnectionString);
+
+                    connection.conn.Open();
+                
+                    string insert = "INSERT INTO Bookings VALUES (@guestID, @recepID, @roomId, @checkiD, @checkinT, @checkoutD, @checkoutT, @capacity)";
                     connection.comm = new SqlCommand(insert, connection.conn);
+
                     connection.comm.Parameters.AddWithValue("@guestID", int.Parse(txtGuestId.Text));
-                    connection.comm.Parameters.AddWithValue("@recepID", int.Parse(txtRecep.Text));
-                    connection.comm.Parameters.AddWithValue("@roomId", int.Parse(txtRoomID.Text));
-                    connection.comm.Parameters.AddWithValue("@checkiD",monthCalendar.MinDate);
+                    connection.comm.Parameters.AddWithValue("@recepID", int.Parse(lblRecID.Text));
+                    connection.comm.Parameters.AddWithValue("@roomId", int.Parse(RoomID));
+
+                    connection.comm.Parameters.AddWithValue("@checkiD", datePickerCheckIn.Text);
                     connection.comm.Parameters.AddWithValue("@checkinT", txtCheckTime.Text);
-                    connection.comm.Parameters.AddWithValue("@checkoutD", monthCalendar.MaxDate);
-                    connection.comm.Parameters.AddWithValue("@checkoutT", txtCheckTime.Text);
-                    connection.comm.Parameters.AddWithValue("@capacity", numericUDcap.Value);
+
+                    connection.comm.Parameters.AddWithValue("@checkoutD", dateTimePickerChkOut.Text);
+                    connection.comm.Parameters.AddWithValue("@checkoutT", txtCheckOutTime.Text);
+
+                    connection.comm.Parameters.AddWithValue("@capacity",(int)numericUDcap.Value);
 
                     connection.comm.ExecuteNonQuery();
+                
+
+
+                    //string sqlInsert = $"INSERT INTO Bookings Values('{txtGuestId.Text}', '{lblRecID.Text}', '{int.Parse(RoomID)}', '{datePickerCheckIn.Value.Date}', '{txtCheckTime.Text}', '{}'"
+
 
                     connection.conn.Close();
 
+                    MessageBox.Show("A booking is succesfully confirmed.");
+
+                }
+                else if (rdbtnAnotherTime.Checked)
+                {
+                    datePickerCheckIn.Enabled = false;
+                    txtCheckTime.Enabled = false;
+                    lblDate.Enabled = false;
+                    lblTime.Enabled = false;
                 }
                 else
                 {
-                    MessageBox.Show("Choose an appointment");
+                    MessageBox.Show("Choose an appointment!");
                 }
+            
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Oops! There was an erorr..\n" + ex.Message);
             }
         }
 
@@ -118,40 +237,49 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
-                string name = "SELECT * FROM Guests";
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
+
+                string name = "SELECT * FROM Guests WHERE Guest_ID = '" + txtGuestId.Text + "'";
                 connection.comm = new SqlCommand(name, connection.conn);
                 connection.reader = connection.comm.ExecuteReader();
 
                 while (connection.reader.Read())
                 {
                     lstBookingInfo.Items.Add("The Following Booking Arrangements have been made: " + "\n");
-                    lstBookingInfo.Items.Add("BOOKING SUCCESSFULLY MADE FOR: " + connection.reader.GetValue(1) + "\t" + " last name: " + connection.reader.GetValue(2) + "\n");
-                    lstBookingInfo.Items.Add("Email Notification with all details has been sent to " + connection.reader.GetValue(3) + "\t" + " an sms to " + connection.reader.GetValue(4));
+                    lstBookingInfo.Items.Add("BOOKING SUCCESSFULLY MADE FOR: " + connection.reader.GetValue(1).ToString() + " " + connection.reader.GetValue(2).ToString() + "\n");
+                    lstBookingInfo.Items.Add("Email Notification with all details has been sent to " + connection.reader.GetValue(3).ToString() + " and an sms to " + connection.reader.GetValue(4).ToString());
                 }
+
+                string display = "SELECT * FROM Rooms WHERE Room_ID = '" + lblRoomID.Text + "'";
+
+                connection.comm1 = new SqlCommand(display, connection.conn);
+                connection.reader1 = connection.comm.ExecuteReader();
+
+                while (connection.reader1.Read())
+                {
+                  
+                    lstBookingInfo.Items.Add("\nROOM TYPE" + connection.reader1.GetValue(8).ToString()+ "\t" + cmbRoomType.SelectedItem);
+                    lstBookingInfo.Items.Add("ROOM PRICE: " + roomPrice);
+                   
+                }
+
+
+                if(rdbtnNow.Checked)
+                {
+                    lstBookingInfo.Items.Add("CHECK IN DATE: " + datePickerCheckIn.Text);
+                    lstBookingInfo.Items.Add("CHECK IN TIME AGREED ON: " + txtCheckTime.Text + "\n");
+                }
+                else
+                {
+                    lstBookingInfo.Items.Add("CHECK IN DATE: Not Yet Picked");
+                    lstBookingInfo.Items.Add("CHECK IN TIME AGREED ON: Not Yet Picked" + "\n");
+                }
+
                 connection.conn.Close();
 
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
-                string display = "SELECT * FROM Bookings";
-
-                connection.comm = new SqlCommand(display, connection.conn);
-                connection.reader = connection.comm.ExecuteReader();
-
-                while (connection.reader.Read())
-                {
-                    lstBookingInfo.Items.Add("\n" + "BOOKING ID: " + connection.reader.GetValue(0).ToString() + "\n");
-                    lstBookingInfo.Items.Add("GUEST ID: " + connection.reader.GetValue(1).ToString() + "\n");
-                    lstBookingInfo.Items.Add("GUEST CAPACITY & ROOM TYPE" + connection.reader.GetValue(8).ToString()+ "\t" + cmbRoomType.SelectedItem);
-                    lstBookingInfo.Items.Add("CHECK IN DATE: " + connection.reader.GetValue(4).ToString());
-                    lstBookingInfo.Items.Add("CHECK IN TIME AGREED ON: " + connection.reader.GetValue(5).ToString()+ "\n");
-                }
-                connection.conn.Close();
+               
             }
             catch (Exception ex)
             {
@@ -163,20 +291,23 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if(connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
 
                 string update = "UPDATE Bookings SET CheckIn_Date = @date,CheckIn_Time = @time WHERE Booking_ID = @id";
                 connection.comm = new SqlCommand(update, connection.conn);
                 connection.comm.Parameters.AddWithValue("@id", txtSearchID.Text);
-                connection.comm.Parameters.AddWithValue("@date",calendarBooking.SelectionStart);
-                connection.comm.Parameters.AddWithValue("@time",txtCheckInTime.Text);
+                connection.comm.Parameters.AddWithValue("@date", dateTimeChckInMan.Text);
+                connection.comm.Parameters.AddWithValue("@time",txtCheckInTimeMan.Text);
                 connection.comm.ExecuteNonQuery();
                 connection.conn.Close();
+
+                displayBookings();
+
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -186,10 +317,9 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if(connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open(); 
 
                 string display = "SELECT FirstName,LastName FROM Guests";
                 connection.comm = new SqlCommand(display, connection.conn);
@@ -201,12 +331,12 @@ namespace CMPG_223_PROJECT_GROUP35
                     lstCheckInInfo.Items.Add("FIRSTNAME: " + connection.reader.GetValue(1) + "\n");
                     lstCheckInInfo.Items.Add("LASTNAME: " + connection.reader.GetValue(2) + "\n");
                 }
-                connection.conn.Close();
+                //connection.conn.Close();
 
-                if (connection.conn.State == ConnectionState.Closed)
+                /*if (connection.conn.State == ConnectionState.Closed)
                 {
                     connection.conn.Open();
-                }
+                }*/
                 string checkInDetails = "SELECT CheckIn_Date,CheckIn_Time,Number_of_Guests FROM Bookings";
 
                 connection.comm = new SqlCommand(checkInDetails, connection.conn);
@@ -231,10 +361,10 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
+
                 string query = "SELECT * FROM Bookings WHERE Booking_ID LIKE'%" + txtSearchID.Text + "%'";
                 connection.comm = new SqlCommand(query, connection.conn);
                 connection.adap = new SqlDataAdapter();
@@ -254,27 +384,24 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
+
                 string update = "UPDATE Bookings SET CheckOut_Date = @date,CheckOut_Time = @time WHERE Booking_ID = @id";
                 connection.comm = new SqlCommand(update, connection.conn);
                 connection.comm.Parameters.AddWithValue("@id", txtSearch.Text);
-                connection.comm.Parameters.AddWithValue("@date", CalendarMonth.SelectionStart);
+                connection.comm.Parameters.AddWithValue("@date", dateTimePickerChkOut.Text);
                 connection.comm.Parameters.AddWithValue("@time", txtCheckOutTime.Text);
                 connection.comm.ExecuteNonQuery();
                 connection.conn.Close();
 
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+
                 string transaction = "INSERT INTO Transactions VALUES(@id,@date,@method)";
                 connection.comm = new SqlCommand(transaction, connection.conn);
                 connection.comm.Parameters.AddWithValue("@id", txtSearch.Text);
-                connection.comm.Parameters.AddWithValue("@date", CalendarMonth.SelectionStart);
-                connection.comm.Parameters.AddWithValue("@method", comboTransaction.SelectedItem);
+                connection.comm.Parameters.AddWithValue("@date", dateTimePickerChkOut.Text);
+                connection.comm.Parameters.AddWithValue("@method", comboTransaction.SelectedItem.ToString());
                 connection.comm.ExecuteNonQuery();
                 connection.conn.Close();
             }
@@ -288,10 +415,10 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
+
                 string query = "SELECT * FROM Bookings WHERE Booking_ID LIKE'%" + txtSearch.Text + "%'";
                 connection.comm = new SqlCommand(query, connection.conn);
                 connection.adap = new SqlDataAdapter();
@@ -311,10 +438,10 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+                connection.conn = new SqlConnection(connection.ConnectionString);
+
+                connection.conn.Open();
+
                 string display = "SELECT FirstName,LastName FROM Guests";
                 connection.comm = new SqlCommand(display, connection.conn);
                 connection.reader = connection.comm.ExecuteReader();
@@ -325,12 +452,8 @@ namespace CMPG_223_PROJECT_GROUP35
                     lstCheckInInfo.Items.Add("FIRSTNAME: " + connection.reader.GetValue(1) + "\n");
                     lstCheckInInfo.Items.Add("LASTNAME: " + connection.reader.GetValue(2) + "\n");
                 }
-                connection.conn.Close();
 
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
+
                 string checkInDetails = "SELECT CheckOut_Date,CheckOut_Time,Number_of_Guests FROM Bookings";
 
                 connection.comm = new SqlCommand(checkInDetails, connection.conn);
@@ -344,12 +467,6 @@ namespace CMPG_223_PROJECT_GROUP35
                 }
 
 
-                connection.conn.Close();
-
-                if (connection.conn.State == ConnectionState.Closed)
-                {
-                    connection.conn.Open();
-                }
                 string transactionDetails = "SELECT Room_Price FROM Rooms";
                 connection.comm = new SqlCommand(transactionDetails, connection.conn);
                 connection.reader = connection.comm.ExecuteReader();
@@ -366,6 +483,24 @@ namespace CMPG_223_PROJECT_GROUP35
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnSearchGuest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbRoomType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedRoomType = cmbRoomType.SelectedItem.ToString();
+            getRoomPrice(selectedRoomType);
+            lblRoomID.Text = RoomID;
+
         }
     }
 }

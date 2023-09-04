@@ -17,15 +17,19 @@ namespace CMPG_223_PROJECT_GROUP35
         public frmLogIn()
         {
             InitializeComponent(); 
+            cbShowPassword.Checked = true;
         }
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\legen\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf"";Integrated Security=True;Connect Timeout=30";
         public SqlConnection conn;
         public SqlCommand comm;
+        public SqlCommand comm1;
         public SqlDataAdapter adap;
         public SqlDataReader reader;
+        public SqlDataReader reader1;
         public DataSet ds;
 
+        public string recID;
 
         private void frmLogIn_Load(object sender, EventArgs e)
         {
@@ -33,8 +37,38 @@ namespace CMPG_223_PROJECT_GROUP35
             lblError.Visible = false; 
 
             //
-            cbShowPassword.Checked = true;
+            //cbShowPassword.Checked = true;
         }
+        
+
+        public string getReceptionistID()
+        {
+            string recepID = "";
+
+            try
+            {
+                conn = new SqlConnection(ConnectionString);
+                conn.Open();
+
+                string sql = "SELECT * FROM Receptionists WHERE Email_Address = '" + txtEmail.Text + "'";
+                comm = new SqlCommand(sql, conn);
+                reader = comm.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    recepID = reader.GetString(0).ToString();
+                }
+
+                return recepID;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Oops! An error has occured!\n" + ex.Message);
+            }
+
+            return recepID;
+        }
+
 
         private void isManager(string username, string password)
         {
@@ -70,9 +104,10 @@ namespace CMPG_223_PROJECT_GROUP35
             //Getting the user log in details
             String username = txtEmail.Text.Trim();
             String password = txtPassword.Text.Trim();
-          
+
             
-            
+
+
            ///*
             if (username == "Manager1@lehlabilehotel.co.za")
             {
@@ -132,46 +167,14 @@ namespace CMPG_223_PROJECT_GROUP35
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             // Hiding and showing the password
-            if(cbShowPassword.Checked)
-            {
-                txtPassword.UseSystemPasswordChar = cbShowPassword.Checked;
-                cbShowPassword.Text = "Hide Password";
-
-            }
-            else
-            {
-                txtPassword.UseSystemPasswordChar = false;
-                cbShowPassword.Text = "Show Password";
-            }
+            txtPassword.UseSystemPasswordChar = cbShowPassword.Checked;
         }
 
         private void linkLblAddNewUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Make the sign up form appear
             FormSignUp signUpWindow = new FormSignUp();
-            signUpWindow.ShowDialog();                  
-
-            try
-            {
-                conn = new SqlConnection(ConnectionString);
-                conn.Open();
-                string insertStatement = $"INSERT INTO Receptionists VALUES(@FirstName,@LastName,@Email_Address,@Cellnumber,@password)";
-                comm = new SqlCommand(insertStatement, conn);
-
-                comm.Parameters.AddWithValue("@FirstName", signUpWindow.fName);
-                comm.Parameters.AddWithValue("@LastName", signUpWindow.flastname);
-                comm.Parameters.AddWithValue("@Email_Address", signUpWindow.fEmail);
-                comm.Parameters.AddWithValue("@password", signUpWindow.fPassword);
-                comm.Parameters.AddWithValue("@Cellnumber", signUpWindow.fCellNumber);
-
-                comm.ExecuteNonQuery();
-
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Oops! An error has occured\n" + ex.Message);
-            }
+            signUpWindow.ShowDialog();
         }
     }
 }

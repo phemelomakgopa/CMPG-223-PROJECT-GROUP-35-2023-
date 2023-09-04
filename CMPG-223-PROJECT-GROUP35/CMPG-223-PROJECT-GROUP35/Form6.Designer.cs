@@ -29,7 +29,7 @@ namespace CMPG_223_PROJECT_GROUP35
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddNewGuest = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label2 = new System.Windows.Forms.Label();
             this.txtFnameAdd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.changeDetails = new System.Windows.Forms.TabPage();
             this.btnSubmitChanges = new System.Windows.Forms.Button();
             this.txtUpdateNum = new System.Windows.Forms.TextBox();
             this.lblUpdateNum = new System.Windows.Forms.Label();
@@ -54,47 +54,48 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbUpdateEmail = new System.Windows.Forms.CheckBox();
             this.cbUpdateSurname = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvGuestsOutput = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.txtGuestID = new System.Windows.Forms.TextBox();
-            this.lstSearchOutput = new System.Windows.Forms.ListBox();
             this.btnUpdateGuestSearch = new System.Windows.Forms.Button();
             this.txtUGuest = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataDelete = new System.Windows.Forms.DataGridView();
             this.btnDeleteGuest = new System.Windows.Forms.Button();
-            this.lstGuestOutput = new System.Windows.Forms.ListBox();
-            this.btnSearchGuest = new System.Windows.Forms.Button();
             this.txtSearchGuest = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tabControl.SuspendLayout();
+            this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.changeDetails.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGuestsOutput)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDelete)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl
+            // tabControl2
             // 
-            this.tabControl.Controls.Add(this.tabPage1);
-            this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Controls.Add(this.tabPage3);
-            this.tabControl.Location = new System.Drawing.Point(11, 10);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1160, 782);
-            this.tabControl.TabIndex = 0;
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.changeDetails);
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Location = new System.Drawing.Point(11, 10);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(1021, 601);
+            this.tabControl2.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage1.Size = new System.Drawing.Size(1152, 753);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1013, 572);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add New Guest";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -110,19 +111,19 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFnameAdd);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(135, 24);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(280, 60);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(479, 571);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(461, 424);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Guest";
             // 
             // btnAddNewGuest
             // 
-            this.btnAddNewGuest.Location = new System.Drawing.Point(97, 462);
-            this.btnAddNewGuest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddNewGuest.Location = new System.Drawing.Point(70, 330);
+            this.btnAddNewGuest.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddNewGuest.Name = "btnAddNewGuest";
             this.btnAddNewGuest.Size = new System.Drawing.Size(280, 53);
             this.btnAddNewGuest.TabIndex = 10;
@@ -133,7 +134,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtCellNumAdd
             // 
             this.txtCellNumAdd.Location = new System.Drawing.Point(37, 260);
-            this.txtCellNumAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCellNumAdd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCellNumAdd.Name = "txtCellNumAdd";
             this.txtCellNumAdd.Size = new System.Drawing.Size(391, 22);
             this.txtCellNumAdd.TabIndex = 9;
@@ -151,7 +152,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtEmailAdd
             // 
             this.txtEmailAdd.Location = new System.Drawing.Point(37, 174);
-            this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailAdd.Name = "txtEmailAdd";
             this.txtEmailAdd.Size = new System.Drawing.Size(377, 22);
             this.txtEmailAdd.TabIndex = 5;
@@ -169,7 +170,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtLNameAdd
             // 
             this.txtLNameAdd.Location = new System.Drawing.Point(207, 73);
-            this.txtLNameAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLNameAdd.Margin = new System.Windows.Forms.Padding(4);
             this.txtLNameAdd.Name = "txtLNameAdd";
             this.txtLNameAdd.Size = new System.Drawing.Size(208, 22);
             this.txtLNameAdd.TabIndex = 3;
@@ -187,7 +188,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtFnameAdd
             // 
             this.txtFnameAdd.Location = new System.Drawing.Point(37, 73);
-            this.txtFnameAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFnameAdd.Margin = new System.Windows.Forms.Padding(4);
             this.txtFnameAdd.Name = "txtFnameAdd";
             this.txtFnameAdd.Size = new System.Drawing.Size(160, 22);
             this.txtFnameAdd.TabIndex = 1;
@@ -202,25 +203,25 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name:";
             // 
-            // tabPage2
+            // changeDetails
             // 
-            this.tabPage2.Controls.Add(this.btnSubmitChanges);
-            this.tabPage2.Controls.Add(this.txtUpdateNum);
-            this.tabPage2.Controls.Add(this.lblUpdateNum);
-            this.tabPage2.Controls.Add(this.txtUpdateEmail);
-            this.tabPage2.Controls.Add(this.lblUpdateEmail);
-            this.tabPage2.Controls.Add(this.txtUpdateSurname);
-            this.tabPage2.Controls.Add(this.lblUpdateSurname);
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1152, 753);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Change Guest Info";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
+            this.changeDetails.Controls.Add(this.btnSubmitChanges);
+            this.changeDetails.Controls.Add(this.txtUpdateNum);
+            this.changeDetails.Controls.Add(this.lblUpdateNum);
+            this.changeDetails.Controls.Add(this.txtUpdateEmail);
+            this.changeDetails.Controls.Add(this.lblUpdateEmail);
+            this.changeDetails.Controls.Add(this.txtUpdateSurname);
+            this.changeDetails.Controls.Add(this.lblUpdateSurname);
+            this.changeDetails.Controls.Add(this.groupBox3);
+            this.changeDetails.Controls.Add(this.groupBox2);
+            this.changeDetails.Location = new System.Drawing.Point(4, 25);
+            this.changeDetails.Name = "changeDetails";
+            this.changeDetails.Padding = new System.Windows.Forms.Padding(3);
+            this.changeDetails.Size = new System.Drawing.Size(1013, 572);
+            this.changeDetails.TabIndex = 1;
+            this.changeDetails.Text = "Change Guest Info";
+            this.changeDetails.UseVisualStyleBackColor = true;
+            this.changeDetails.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // btnSubmitChanges
             // 
@@ -234,6 +235,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtUpdateNum
             // 
+            this.txtUpdateNum.Enabled = false;
             this.txtUpdateNum.Location = new System.Drawing.Point(542, 505);
             this.txtUpdateNum.Name = "txtUpdateNum";
             this.txtUpdateNum.Size = new System.Drawing.Size(174, 22);
@@ -242,6 +244,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // lblUpdateNum
             // 
             this.lblUpdateNum.AutoSize = true;
+            this.lblUpdateNum.Enabled = false;
             this.lblUpdateNum.Location = new System.Drawing.Point(539, 465);
             this.lblUpdateNum.Name = "lblUpdateNum";
             this.lblUpdateNum.Size = new System.Drawing.Size(178, 16);
@@ -327,23 +330,33 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dgvGuestsOutput);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtGuestID);
-            this.groupBox2.Controls.Add(this.lstSearchOutput);
             this.groupBox2.Controls.Add(this.btnUpdateGuestSearch);
             this.groupBox2.Controls.Add(this.txtUGuest);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(17, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(772, 267);
+            this.groupBox2.Size = new System.Drawing.Size(853, 267);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Guest";
             // 
+            // dgvGuestsOutput
+            // 
+            this.dgvGuestsOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGuestsOutput.Location = new System.Drawing.Point(27, 76);
+            this.dgvGuestsOutput.Name = "dgvGuestsOutput";
+            this.dgvGuestsOutput.RowHeadersWidth = 51;
+            this.dgvGuestsOutput.RowTemplate.Height = 24;
+            this.dgvGuestsOutput.Size = new System.Drawing.Size(789, 126);
+            this.dgvGuestsOutput.TabIndex = 6;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(592, 210);
+            this.label10.Location = new System.Drawing.Point(600, 225);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 16);
             this.label10.TabIndex = 5;
@@ -351,28 +364,20 @@ namespace CMPG_223_PROJECT_GROUP35
             // 
             // txtGuestID
             // 
-            this.txtGuestID.Location = new System.Drawing.Point(667, 205);
+            this.txtGuestID.Location = new System.Drawing.Point(690, 222);
             this.txtGuestID.Name = "txtGuestID";
             this.txtGuestID.Size = new System.Drawing.Size(75, 22);
             this.txtGuestID.TabIndex = 4;
             // 
-            // lstSearchOutput
-            // 
-            this.lstSearchOutput.FormattingEnabled = true;
-            this.lstSearchOutput.ItemHeight = 16;
-            this.lstSearchOutput.Location = new System.Drawing.Point(27, 74);
-            this.lstSearchOutput.Name = "lstSearchOutput";
-            this.lstSearchOutput.Size = new System.Drawing.Size(715, 116);
-            this.lstSearchOutput.TabIndex = 3;
-            // 
             // btnUpdateGuestSearch
             // 
-            this.btnUpdateGuestSearch.Location = new System.Drawing.Point(667, 32);
+            this.btnUpdateGuestSearch.Location = new System.Drawing.Point(741, 28);
             this.btnUpdateGuestSearch.Name = "btnUpdateGuestSearch";
             this.btnUpdateGuestSearch.Size = new System.Drawing.Size(75, 25);
             this.btnUpdateGuestSearch.TabIndex = 2;
             this.btnUpdateGuestSearch.Text = "Search";
             this.btnUpdateGuestSearch.UseVisualStyleBackColor = true;
+            this.btnUpdateGuestSearch.Click += new System.EventHandler(this.btnUpdateGuestSearch_Click);
             // 
             // txtUGuest
             // 
@@ -396,28 +401,38 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1152, 753);
+            this.tabPage3.Size = new System.Drawing.Size(1013, 572);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Delete Existing Guest";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.dataDelete);
             this.groupBox4.Controls.Add(this.btnDeleteGuest);
-            this.groupBox4.Controls.Add(this.lstGuestOutput);
-            this.groupBox4.Controls.Add(this.btnSearchGuest);
             this.groupBox4.Controls.Add(this.txtSearchGuest);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Location = new System.Drawing.Point(175, 43);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(772, 363);
+            this.groupBox4.Size = new System.Drawing.Size(772, 326);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Delete Guest";
             // 
+            // dataDelete
+            // 
+            this.dataDelete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataDelete.Location = new System.Drawing.Point(24, 75);
+            this.dataDelete.Name = "dataDelete";
+            this.dataDelete.RowHeadersWidth = 51;
+            this.dataDelete.RowTemplate.Height = 24;
+            this.dataDelete.Size = new System.Drawing.Size(718, 111);
+            this.dataDelete.TabIndex = 5;
+            // 
             // btnDeleteGuest
             // 
-            this.btnDeleteGuest.Location = new System.Drawing.Point(268, 247);
+            this.btnDeleteGuest.Location = new System.Drawing.Point(223, 228);
             this.btnDeleteGuest.Name = "btnDeleteGuest";
             this.btnDeleteGuest.Size = new System.Drawing.Size(273, 56);
             this.btnDeleteGuest.TabIndex = 4;
@@ -425,72 +440,51 @@ namespace CMPG_223_PROJECT_GROUP35
             this.btnDeleteGuest.UseVisualStyleBackColor = true;
             this.btnDeleteGuest.Click += new System.EventHandler(this.btnDeleteGuest_Click);
             // 
-            // lstGuestOutput
-            // 
-            this.lstGuestOutput.FormattingEnabled = true;
-            this.lstGuestOutput.ItemHeight = 16;
-            this.lstGuestOutput.Location = new System.Drawing.Point(27, 74);
-            this.lstGuestOutput.Name = "lstGuestOutput";
-            this.lstGuestOutput.Size = new System.Drawing.Size(715, 116);
-            this.lstGuestOutput.TabIndex = 3;
-            // 
-            // btnSearchGuest
-            // 
-            this.btnSearchGuest.Location = new System.Drawing.Point(667, 32);
-            this.btnSearchGuest.Name = "btnSearchGuest";
-            this.btnSearchGuest.Size = new System.Drawing.Size(75, 25);
-            this.btnSearchGuest.TabIndex = 2;
-            this.btnSearchGuest.Text = "Search";
-            this.btnSearchGuest.UseVisualStyleBackColor = true;
-            // 
             // txtSearchGuest
             // 
-            this.txtSearchGuest.Location = new System.Drawing.Point(147, 32);
+            this.txtSearchGuest.Location = new System.Drawing.Point(307, 29);
             this.txtSearchGuest.Name = "txtSearchGuest";
-            this.txtSearchGuest.Size = new System.Drawing.Size(514, 22);
+            this.txtSearchGuest.Size = new System.Drawing.Size(180, 22);
             this.txtSearchGuest.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 35);
+            this.label9.Location = new System.Drawing.Point(184, 35);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 16);
+            this.label9.Size = new System.Drawing.Size(64, 16);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Search for Guest:";
+            this.label9.Text = "Guest ID: ";
             // 
             // FormGuests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1726, 831);
-            this.Controls.Add(this.tabControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ClientSize = new System.Drawing.Size(1128, 761);
+            this.Controls.Add(this.tabControl2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormGuests";
             this.Load += new System.EventHandler(this.FormGuests_Load);
-            this.tabControl.ResumeLayout(false);
+            this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.changeDetails.ResumeLayout(false);
+            this.changeDetails.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGuestsOutput)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDelete)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAddNewGuest;
         private System.Windows.Forms.TextBox txtCellNumAdd;
@@ -512,7 +506,6 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.CheckBox cbUpdateEmail;
         private System.Windows.Forms.CheckBox cbUpdateSurname;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox lstSearchOutput;
         private System.Windows.Forms.Button btnUpdateGuestSearch;
         private System.Windows.Forms.TextBox txtUGuest;
         private System.Windows.Forms.Button btnSubmitChanges;
@@ -521,9 +514,13 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnDeleteGuest;
-        private System.Windows.Forms.ListBox lstGuestOutput;
-        private System.Windows.Forms.Button btnSearchGuest;
         private System.Windows.Forms.TextBox txtSearchGuest;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvGuestsOutput;
+        public System.Windows.Forms.TabControl tabControl2;
+        public System.Windows.Forms.TabPage changeDetails;
+        private System.Windows.Forms.DataGridView dataDelete;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.TabPage tabPage3;
     }
 }

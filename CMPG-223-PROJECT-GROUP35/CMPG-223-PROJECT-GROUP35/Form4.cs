@@ -16,41 +16,12 @@ namespace CMPG_223_PROJECT_GROUP35
         public FormNewExisting()
         {
             InitializeComponent();
-            existingGB.Enabled = false;
+            
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (rdoNewGuest.Checked)
-                {
-                    Form FormGuests = new FormGuests();
-                    existingGB.Enabled = false;
-                    FormGuests.ShowDialog();
-                }
-                else if (rdoExGuest.Checked)
-                {
-                    existingGB.Enabled = true;
-                }
-
-                if (cbBookings.Checked)
-                {
-                    FormBookings book = new FormBookings();
-                    book.ShowDialog();
-                }
-                else if(cbChangeGuestInfo.Checked)
-                {
-                    FormGuests guest = new FormGuests();
-                    guest.ShowDialog();
-                }
-
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-         
+            
         }
 
         private void btnMainRooms_Click(object sender, EventArgs e)
@@ -64,6 +35,86 @@ namespace CMPG_223_PROJECT_GROUP35
             {
                 MessageBox.Show(EX.Message);
             }
+        }
+
+        private void cbBookings_CheckedChanged(object sender, EventArgs e)
+        {          
+        }
+
+        private void FormNewExisting_Load(object sender, EventArgs e)
+        {     
+        }
+
+        private void rdoNewGuest_CheckedChanged(object sender, EventArgs e)
+        {              
+        }
+
+        private void cbChangeGuestInfo_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void rdoExGuest_CheckedChanged(object sender, EventArgs e)
+        {         
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void makeABookingToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormBookings bookingWindow = new FormBookings();    
+            bookingWindow.MdiParent = this; 
+            bookingWindow.Show(); 
+        }
+
+        private void checkInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBookings checkInWindow = new FormBookings();
+            checkInWindow.MdiParent = this; 
+            checkInWindow.Show();
+            checkInWindow.tabControl1.SelectedTab = checkInWindow.tabPage2;
+
+        }
+
+        private void checkOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBookings checkOutWindow = new FormBookings();
+            checkOutWindow.MdiParent = this;
+            checkOutWindow.Show();
+            checkOutWindow.tabControl1.SelectedTab = checkOutWindow.tabPage3;
+        }
+
+        private void cancelABookingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBookings cancelBookingWindow = new FormBookings();
+            cancelBookingWindow.MdiParent = this;
+            cancelBookingWindow.Show();
+            cancelBookingWindow.tabControl1.SelectedTab = cancelBookingWindow.tabPage4;
+        }
+
+        private void addNewGuestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGuests addGuestWindow = new FormGuests();
+            addGuestWindow.MdiParent = this;
+            addGuestWindow.Show();  
+        }
+
+        private void changeGuestDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGuests changeGuestWindow = new FormGuests();
+            changeGuestWindow.MdiParent = this;
+            changeGuestWindow.Show();
+            changeGuestWindow.tabControl2.SelectedTab = changeGuestWindow.changeDetails;
+        }
+
+        private void removeGuestsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGuests removeGuestWindow = new FormGuests();
+            removeGuestWindow.MdiParent = this;
+            removeGuestWindow.Show();
+            removeGuestWindow.tabControl2.SelectedTab = removeGuestWindow.tabPage3;
         }
     }
 }

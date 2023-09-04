@@ -17,34 +17,25 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             InitializeComponent();
         }
-       
-        SqlConnection conn;
-        SqlCommand comm;
-        SqlDataAdapter adap;
-        SqlDataReader reader;
-        DataSet ds;
-        public string conStr;
-        
+
         frmLogIn frmLogIn = new frmLogIn();
 
         private void btnAddNewGuest_Click(object sender, EventArgs e)
         {
             try
             {
-                conn = new SqlConnection(conStr);
-                conn.Open();
-                string SQL = $"INSERT INTO Guests VALUES(@name,@surname,@cellnumber,@email)";
-                comm = new SqlCommand(SQL, conn);
-                
-                comm.Parameters.AddWithValue("@name", txtFnameAdd.Text);
-                comm.Parameters.AddWithValue("@surname", txtLNameAdd.Text);
-                comm.Parameters.AddWithValue("@email", txtEmailAdd.Text);
-                comm.Parameters.AddWithValue("@cellnumber", txtCellNumAdd.Text);
+                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+                frmLogIn.conn.Open();
+                string SQL = $"INSERT INTO Guests VALUES(@name,@surname,@email,@cellnumber)";
+                frmLogIn.comm = new SqlCommand(SQL, frmLogIn.conn);
 
-                comm.ExecuteNonQuery();
+                frmLogIn.comm.Parameters.AddWithValue("@name", txtFnameAdd.Text);
+                frmLogIn.comm.Parameters.AddWithValue("@surname", txtLNameAdd.Text);
+                frmLogIn.comm.Parameters.AddWithValue("@email", txtEmailAdd.Text);
+                frmLogIn.comm.Parameters.AddWithValue("@cellnumber", txtCellNumAdd.Text);
 
-
-                conn.Close();
+                frmLogIn.comm.ExecuteNonQuery();
+                frmLogIn.conn.Close();
 
                 MessageBox.Show("Guest successfully added");
             }
@@ -58,25 +49,71 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                int guestID = int.Parse(txtGuestID.Text);
-                conn = new SqlConnection(conStr);
-                conn.Open();
-                string SQL = $"UPDATE Guests SET LastName = @surname, Email_Address = @email, Cellphone_Number = @cellnumber WHERE GuestID = @guestid";
-                comm = new SqlCommand(SQL, conn);
+                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
 
-                
-                comm.Parameters.AddWithValue("@surname", txtUpdateSurname.Text);
-                comm.Parameters.AddWithValue("@email", txtUpdateEmail.Text);
-                comm.Parameters.AddWithValue("@cellnumber", txtUpdateNum.Text);
-                comm.Parameters.AddWithValue("@guestid", guestID);
-                comm.ExecuteNonQuery();
+                frmLogIn.conn.Open();  
 
-                
-                conn.Close();
-                MessageBox.Show("Details successfully changed.");
+                int guestID;
+
+                if (int.TryParse(txtGuestID.Text, out guestID))
+                {
+
+                    if (cbUpdateSurname.Checked)
+                    {
+                        lblUpdateSurname.Enabled = true;
+                        txtUpdateSurname.Enabled = true;
+
+                        string SQL = $"UPDATE Guests SET LastName = @surname WHERE Guest_ID = @guestid";
+
+                        frmLogIn.comm = new SqlCommand(SQL, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@surname", txtUpdateSurname.Text);
+                        frmLogIn.comm.Parameters.AddWithValue("@guestid", guestID);
+
+                        frmLogIn.comm.ExecuteNonQuery();
+                        
+                    }
+                    if (cbUpdateEmail.Checked)
+                    {
+                        lblUpdateEmail.Enabled = true;
+                        txtUpdateEmail.Enabled = true;
+
+                        string SQL = $"UPDATE Guests SET Email_Address = @email WHERE Guest_ID = @guestid";
+
+                        frmLogIn.comm = new SqlCommand(SQL, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@email", txtUpdateEmail.Text);
+                        frmLogIn.comm.Parameters.AddWithValue("@guestid", guestID);
+
+                        frmLogIn.comm.ExecuteNonQuery();
+                    }
+                    if (cbUpdateNum.Checked)
+                    {
+                        lblUpdateNum.Enabled = true;
+                        txtUpdateNum.Enabled = true;
+
+                        string SQL = $"UPDATE Guests SET Cellphone_Number = @cellphone WHERE Guest_ID = @guestid";
+                        frmLogIn.comm = new SqlCommand(SQL, frmLogIn.conn);
+                        frmLogIn.comm.Parameters.AddWithValue("@cellphone", txtUpdateNum.Text);
+                        frmLogIn.comm.Parameters.AddWithValue("@guestid", guestID);
+
+                        frmLogIn.comm.ExecuteNonQuery();
+                        
+                    }
+
+                 frmLogIn.conn.Close();
+                 MessageBox.Show("Details successfully changed.");
+
+                }
+                else
+                {
+                    MessageBox.Show("Provide the guest id to make changes");
+                }
+
+                display();
+
+               
 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -131,40 +168,51 @@ namespace CMPG_223_PROJECT_GROUP35
 
         public void display()
         {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            string sql = "SELECT * FROM Guests";
-            comm = new SqlCommand(sql, conn);
-            reader = comm.ExecuteReader();
+            frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+            frmLogIn.conn.Open();
 
-            while (reader.Read())
-            {
-                lstSearchOutput.Items.Add(reader.GetValue(0) + "\t" + reader.GetValue(1) + "\t" + reader.GetValue(2) + "\t" + reader.GetValue(3) + "\t" + reader.GetValue(4));
-                lstSearchOutput.Items.Add("");
-            }
-            conn.Close();
+            frmLogIn.ds = new DataSet();
+            frmLogIn.adap = new SqlDataAdapter();
+
+            string sql = "SELECT * FROM Guests";
+            frmLogIn.comm = new SqlCommand(sql, frmLogIn.conn);
+
+            frmLogIn.adap.SelectCommand = frmLogIn.comm;
+            frmLogIn.adap.Fill(frmLogIn.ds, "Guests");
+
+           dgvGuestsOutput.DataSource = frmLogIn.ds;
+           dgvGuestsOutput.DataMember = "Guests";
+
+            dataDelete.DataSource = frmLogIn.ds;
+            dataDelete.DataMember = "Guests";
+
+
+
+
+            frmLogIn.conn.Close();
         }
         private void txtUGuest_TextChanged(object sender, EventArgs e)
         {
-            lstGuestOutput.Items.Clear();
+            
             try
             {
-                if (conn.State == ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-                string query = "SELECT * FROM Guests WHERE Cellphone_Number LIKE '%" + txtSearchGuest.Text + "%'";
-                comm = new SqlCommand(query, conn);
-                reader = comm.ExecuteReader();
+                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+                frmLogIn.conn.Open();
 
-                while(reader.Read())
-                {
-                    lstSearchOutput.Items.Add(reader.GetValue(0) + "\t" + reader.GetValue(1) + "\t" + reader.GetValue(2) + "\t" + reader.GetValue(3) + "\t" + reader.GetValue(4));
-                    lstSearchOutput.Items.Add("");
-                }
-                conn.Close();
+                frmLogIn.ds = new DataSet();
+                frmLogIn.adap = new SqlDataAdapter();
+
+                string query = "SELECT * FROM Guests WHERE Cellphone_Number LIKE '%" + txtUGuest.Text + "%'";
+
+                frmLogIn.comm = new SqlCommand(query, frmLogIn.conn);
+                
+                frmLogIn.adap.SelectCommand = frmLogIn.comm;
+                frmLogIn.adap.Fill(frmLogIn.ds, "Guests");
+
+                dgvGuestsOutput.DataSource = frmLogIn.ds;
+                dgvGuestsOutput.DataMember = "Guests";
+
+                frmLogIn.conn.Close();
 
             }
             catch (SqlException ex)
@@ -189,18 +237,21 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if(conn.State ==ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-                string delete = "DELETE FROM Guests WHERE Guest_ID = " + lstGuestOutput.SelectedItem;
-                comm = new SqlCommand(delete, conn);
-                adap = new SqlDataAdapter();
-                adap.DeleteCommand = comm;
-                adap.DeleteCommand.ExecuteNonQuery();
-                conn.Close();
+                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+                frmLogIn.conn.Open();
+                int deleteGuest = int.Parse(txtSearchGuest.Text);
+
+                string delete = "DELETE FROM Guests WHERE Guest_ID = '" + deleteGuest+ "'";
+
+                frmLogIn.comm = new SqlCommand(delete, frmLogIn.conn);
+                frmLogIn.adap = new SqlDataAdapter();
+                frmLogIn.adap.DeleteCommand = frmLogIn.comm;
+                frmLogIn.adap.DeleteCommand.ExecuteNonQuery();
+                frmLogIn.conn.Close();
+             
                 MessageBox.Show("Guest is successfully removed from the system");
-                
+                display();
+
             }
             catch(SqlException ex)
             {
@@ -210,7 +261,54 @@ namespace CMPG_223_PROJECT_GROUP35
 
         private void FormGuests_Load(object sender, EventArgs e)
         {
+            lblUpdateSurname.Enabled = false;
+            txtUpdateSurname.Enabled = false;
+            lblUpdateEmail.Enabled = false;
+            txtUpdateEmail.Enabled = false;
+            lblUpdateSurname.Enabled = false;
+            txtUpdateSurname.Enabled = false;
+            display();
+        }
 
+        private void btnUpdateGuestSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+                frmLogIn.conn.Open();
+
+                frmLogIn.ds = new DataSet();
+                frmLogIn.adap = new SqlDataAdapter();
+
+                string query = "SELECT * FROM Guests WHERE Cellphone_Number LIKE '%" + txtUGuest.Text + "%'";
+
+                frmLogIn.comm = new SqlCommand(query, frmLogIn.conn);
+
+                frmLogIn.adap.SelectCommand = frmLogIn.comm;
+                frmLogIn.adap.Fill(frmLogIn.ds, "Guests");
+
+                dgvGuestsOutput.DataSource = frmLogIn.ds;
+                dgvGuestsOutput.DataMember = "Guests";
+
+                frmLogIn.conn.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {
+           try
+            {
+                display();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

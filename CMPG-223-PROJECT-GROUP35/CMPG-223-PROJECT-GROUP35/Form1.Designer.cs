@@ -29,6 +29,7 @@ namespace CMPG_223_PROJECT_GROUP35
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogIn));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.linkLblAddNewUser = new System.Windows.Forms.LinkLabel();
             this.lblError = new System.Windows.Forms.Label();
@@ -38,7 +39,9 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -51,7 +54,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnLogin);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(274, 288);
+            this.groupBox1.Location = new System.Drawing.Point(240, 331);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -89,9 +92,9 @@ namespace CMPG_223_PROJECT_GROUP35
             this.cbShowPassword.Location = new System.Drawing.Point(387, 116);
             this.cbShowPassword.Margin = new System.Windows.Forms.Padding(4);
             this.cbShowPassword.Name = "cbShowPassword";
-            this.cbShowPassword.Size = new System.Drawing.Size(125, 20);
+            this.cbShowPassword.Size = new System.Drawing.Size(121, 20);
             this.cbShowPassword.TabIndex = 7;
-            this.cbShowPassword.Text = "Show Password";
+            this.cbShowPassword.Text = "Hide Password";
             this.cbShowPassword.UseVisualStyleBackColor = true;
             this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
@@ -101,7 +104,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(353, 22);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmail
@@ -110,7 +113,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(420, 22);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label2
@@ -145,18 +148,29 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label1.TabIndex = 0;
             this.label1.Text = "Password:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(228, 46);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(495, 259);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 696);
+            this.ClientSize = new System.Drawing.Size(993, 680);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmLogIn";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmLogIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,12 +180,13 @@ namespace CMPG_223_PROJECT_GROUP35
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbShowPassword;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.LinkLabel linkLblAddNewUser;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txtEmail;
     }
 }
 

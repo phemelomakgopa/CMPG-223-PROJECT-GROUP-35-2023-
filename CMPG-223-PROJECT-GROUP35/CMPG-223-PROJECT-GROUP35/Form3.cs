@@ -39,6 +39,7 @@ namespace CMPG_223_PROJECT_GROUP35
                 frmLogIn.adap.Fill(frmLogIn.ds, "Rooms");
 
                 
+                
                 frmLogIn.conn.Close();
             }
             catch(SqlException ex)

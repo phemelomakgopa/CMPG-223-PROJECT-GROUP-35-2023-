@@ -31,6 +31,8 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             this.tabGuests = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.addedRooms = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbCapacity = new System.Windows.Forms.ComboBox();
             this.btnAddRoom = new System.Windows.Forms.Button();
@@ -43,6 +45,7 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.changedRooms = new System.Windows.Forms.DataGridView();
             this.txtUpdateDescr = new System.Windows.Forms.TextBox();
             this.lblDescr = new System.Windows.Forms.Label();
             this.cmbUpdateCapacity = new System.Windows.Forms.ComboBox();
@@ -60,28 +63,25 @@ namespace CMPG_223_PROJECT_GROUP35
             this.label6 = new System.Windows.Forms.Label();
             this.txtRoomIDRemove = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.roomsDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnRemoveRoom = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.deleteRoom = new System.Windows.Forms.TextBox();
-            this.roomsDataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.changedRooms = new System.Windows.Forms.DataGridView();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.addedRooms = new System.Windows.Forms.DataGridView();
             this.tabGuests.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addedRooms)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.changedRooms)).BeginInit();
             this.GBchange.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.changedRooms)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addedRooms)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabGuests
@@ -110,6 +110,27 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabPage1.Text = "Add New Room";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.addedRooms);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(52, 32);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(927, 313);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "View Rooms";
+            // 
+            // addedRooms
+            // 
+            this.addedRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.addedRooms.Location = new System.Drawing.Point(17, 21);
+            this.addedRooms.Name = "addedRooms";
+            this.addedRooms.RowHeadersWidth = 51;
+            this.addedRooms.RowTemplate.Height = 24;
+            this.addedRooms.Size = new System.Drawing.Size(895, 286);
+            this.addedRooms.TabIndex = 1;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmbCapacity);
@@ -123,9 +144,9 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(101, 368);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(838, 246);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -150,7 +171,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // btnAddRoom
             // 
             this.btnAddRoom.Location = new System.Drawing.Point(485, 142);
-            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Size = new System.Drawing.Size(171, 70);
             this.btnAddRoom.TabIndex = 10;
@@ -161,7 +182,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtRoomDescr
             // 
             this.txtRoomDescr.Location = new System.Drawing.Point(29, 126);
-            this.txtRoomDescr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomDescr.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomDescr.Multiline = true;
             this.txtRoomDescr.Name = "txtRoomDescr";
             this.txtRoomDescr.Size = new System.Drawing.Size(391, 86);
@@ -190,7 +211,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtRoomPrice
             // 
             this.txtRoomPrice.Location = new System.Drawing.Point(331, 48);
-            this.txtRoomPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomPrice.Name = "txtRoomPrice";
             this.txtRoomPrice.Size = new System.Drawing.Size(154, 23);
             this.txtRoomPrice.TabIndex = 5;
@@ -208,7 +229,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtRoomType
             // 
             this.txtRoomType.Location = new System.Drawing.Point(30, 48);
-            this.txtRoomType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRoomType.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoomType.Name = "txtRoomType";
             this.txtRoomType.Size = new System.Drawing.Size(261, 23);
             this.txtRoomType.TabIndex = 3;
@@ -259,10 +280,20 @@ namespace CMPG_223_PROJECT_GROUP35
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Change Room Details";
             // 
+            // changedRooms
+            // 
+            this.changedRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.changedRooms.Location = new System.Drawing.Point(35, 20);
+            this.changedRooms.Name = "changedRooms";
+            this.changedRooms.RowHeadersWidth = 51;
+            this.changedRooms.RowTemplate.Height = 24;
+            this.changedRooms.Size = new System.Drawing.Size(904, 235);
+            this.changedRooms.TabIndex = 22;
+            // 
             // txtUpdateDescr
             // 
             this.txtUpdateDescr.Location = new System.Drawing.Point(407, 554);
-            this.txtUpdateDescr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUpdateDescr.Margin = new System.Windows.Forms.Padding(4);
             this.txtUpdateDescr.Multiline = true;
             this.txtUpdateDescr.Name = "txtUpdateDescr";
             this.txtUpdateDescr.Size = new System.Drawing.Size(299, 70);
@@ -307,7 +338,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtUpdatePrice
             // 
             this.txtUpdatePrice.Location = new System.Drawing.Point(409, 383);
-            this.txtUpdatePrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUpdatePrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtUpdatePrice.Name = "txtUpdatePrice";
             this.txtUpdatePrice.Size = new System.Drawing.Size(345, 22);
             this.txtUpdatePrice.TabIndex = 17;
@@ -325,7 +356,7 @@ namespace CMPG_223_PROJECT_GROUP35
             // txtUpdateType
             // 
             this.txtUpdateType.Location = new System.Drawing.Point(409, 308);
-            this.txtUpdateType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUpdateType.Margin = new System.Windows.Forms.Padding(4);
             this.txtUpdateType.Name = "txtUpdateType";
             this.txtUpdateType.Size = new System.Drawing.Size(297, 22);
             this.txtUpdateType.TabIndex = 15;
@@ -440,6 +471,26 @@ namespace CMPG_223_PROJECT_GROUP35
             this.tabPage3.Text = "Remove Room";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.roomsDataGridView);
+            this.groupBox3.Location = new System.Drawing.Point(18, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(975, 331);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "View Rooms";
+            // 
+            // roomsDataGridView
+            // 
+            this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.roomsDataGridView.Location = new System.Drawing.Point(17, 21);
+            this.roomsDataGridView.Name = "roomsDataGridView";
+            this.roomsDataGridView.RowHeadersWidth = 51;
+            this.roomsDataGridView.RowTemplate.Height = 24;
+            this.roomsDataGridView.Size = new System.Drawing.Size(952, 295);
+            this.roomsDataGridView.TabIndex = 1;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnRemoveRoom);
@@ -482,85 +533,34 @@ namespace CMPG_223_PROJECT_GROUP35
             this.deleteRoom.Size = new System.Drawing.Size(266, 22);
             this.deleteRoom.TabIndex = 3;
             // 
-            // roomsDataGridView
-            // 
-            this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roomsDataGridView.Location = new System.Drawing.Point(17, 21);
-            this.roomsDataGridView.Name = "roomsDataGridView";
-            this.roomsDataGridView.RowHeadersWidth = 51;
-            this.roomsDataGridView.RowTemplate.Height = 24;
-            this.roomsDataGridView.Size = new System.Drawing.Size(952, 295);
-            this.roomsDataGridView.TabIndex = 1;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.roomsDataGridView);
-            this.groupBox3.Location = new System.Drawing.Point(18, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(975, 331);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "View Rooms";
-            // 
-            // changedRooms
-            // 
-            this.changedRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.changedRooms.Location = new System.Drawing.Point(35, 20);
-            this.changedRooms.Name = "changedRooms";
-            this.changedRooms.RowHeadersWidth = 51;
-            this.changedRooms.RowTemplate.Height = 24;
-            this.changedRooms.Size = new System.Drawing.Size(904, 235);
-            this.changedRooms.TabIndex = 22;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.addedRooms);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(52, 32);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(927, 313);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "View Rooms";
-            // 
-            // addedRooms
-            // 
-            this.addedRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.addedRooms.Location = new System.Drawing.Point(17, 21);
-            this.addedRooms.Name = "addedRooms";
-            this.addedRooms.RowHeadersWidth = 51;
-            this.addedRooms.RowTemplate.Height = 24;
-            this.addedRooms.Size = new System.Drawing.Size(895, 286);
-            this.addedRooms.TabIndex = 1;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 784);
             this.Controls.Add(this.tabGuests);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form3";
             this.Text = "GuestForm";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.tabGuests.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.addedRooms)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.changedRooms)).EndInit();
             this.GBchange.ResumeLayout(false);
             this.GBchange.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataGridView)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.changedRooms)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.addedRooms)).EndInit();
             this.ResumeLayout(false);
 
         }

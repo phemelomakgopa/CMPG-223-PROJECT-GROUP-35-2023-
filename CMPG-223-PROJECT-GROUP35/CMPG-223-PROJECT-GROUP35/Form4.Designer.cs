@@ -29,137 +29,159 @@ namespace CMPG_223_PROJECT_GROUP35
         /// </summary>
         private void InitializeComponent()
         {
-            this.existingGB = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbChangeGuestInfo = new System.Windows.Forms.CheckBox();
-            this.cbBookings = new System.Windows.Forms.CheckBox();
-            this.rdoNewGuest = new System.Windows.Forms.RadioButton();
-            this.rdoExGuest = new System.Windows.Forms.RadioButton();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnMainRooms = new System.Windows.Forms.Button();
-            this.existingGB.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeABookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maintainGuestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maintainRoomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewGuestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeGuestDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeGuestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeABookingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelABookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // existingGB
+            // menuStrip1
             // 
-            this.existingGB.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.existingGB.Controls.Add(this.label2);
-            this.existingGB.Controls.Add(this.cbChangeGuestInfo);
-            this.existingGB.Controls.Add(this.cbBookings);
-            this.existingGB.Location = new System.Drawing.Point(37, 156);
-            this.existingGB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.existingGB.Name = "existingGB";
-            this.existingGB.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.existingGB.Size = new System.Drawing.Size(462, 250);
-            this.existingGB.TabIndex = 0;
-            this.existingGB.TabStop = false;
-            this.existingGB.Text = "Exisiting Guests";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.makeABookingToolStripMenuItem,
+            this.maintainGuestsToolStripMenuItem,
+            this.maintainRoomsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(941, 28);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // label2
+            // fileToolStripMenuItem
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
-            this.label2.TabIndex = 2;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // cbChangeGuestInfo
+            // makeABookingToolStripMenuItem
             // 
-            this.cbChangeGuestInfo.AutoSize = true;
-            this.cbChangeGuestInfo.Location = new System.Drawing.Point(34, 139);
-            this.cbChangeGuestInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbChangeGuestInfo.Name = "cbChangeGuestInfo";
-            this.cbChangeGuestInfo.Size = new System.Drawing.Size(192, 24);
-            this.cbChangeGuestInfo.TabIndex = 1;
-            this.cbChangeGuestInfo.Text = "Change Guest Details";
-            this.cbChangeGuestInfo.UseVisualStyleBackColor = true;
+            this.makeABookingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.makeABookingToolStripMenuItem1,
+            this.checkInToolStripMenuItem,
+            this.checkOutToolStripMenuItem,
+            this.cancelABookingToolStripMenuItem});
+            this.makeABookingToolStripMenuItem.Name = "makeABookingToolStripMenuItem";
+            this.makeABookingToolStripMenuItem.Size = new System.Drawing.Size(146, 24);
+            this.makeABookingToolStripMenuItem.Text = "Maintain Bookings";
             // 
-            // cbBookings
+            // maintainGuestsToolStripMenuItem
             // 
-            this.cbBookings.AutoSize = true;
-            this.cbBookings.Location = new System.Drawing.Point(30, 68);
-            this.cbBookings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbBookings.Name = "cbBookings";
-            this.cbBookings.Size = new System.Drawing.Size(180, 24);
-            this.cbBookings.TabIndex = 0;
-            this.cbBookings.Text = "Proceed to bookings";
-            this.cbBookings.UseVisualStyleBackColor = true;
+            this.maintainGuestsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewGuestToolStripMenuItem,
+            this.changeGuestDetailsToolStripMenuItem,
+            this.removeGuestsToolStripMenuItem});
+            this.maintainGuestsToolStripMenuItem.Name = "maintainGuestsToolStripMenuItem";
+            this.maintainGuestsToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
+            this.maintainGuestsToolStripMenuItem.Text = "Maintain Guests";
             // 
-            // rdoNewGuest
+            // maintainRoomsToolStripMenuItem
             // 
-            this.rdoNewGuest.AutoSize = true;
-            this.rdoNewGuest.Location = new System.Drawing.Point(36, 45);
-            this.rdoNewGuest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.rdoNewGuest.Name = "rdoNewGuest";
-            this.rdoNewGuest.Size = new System.Drawing.Size(113, 24);
-            this.rdoNewGuest.TabIndex = 0;
-            this.rdoNewGuest.TabStop = true;
-            this.rdoNewGuest.Text = "New Guest";
-            this.rdoNewGuest.UseVisualStyleBackColor = true;
+            this.maintainRoomsToolStripMenuItem.Name = "maintainRoomsToolStripMenuItem";
+            this.maintainRoomsToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
+            this.maintainRoomsToolStripMenuItem.Text = "Maintain Rooms";
             // 
-            // rdoExGuest
+            // addNewGuestToolStripMenuItem
             // 
-            this.rdoExGuest.AutoSize = true;
-            this.rdoExGuest.Location = new System.Drawing.Point(37, 92);
-            this.rdoExGuest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.rdoExGuest.Name = "rdoExGuest";
-            this.rdoExGuest.Size = new System.Drawing.Size(137, 24);
-            this.rdoExGuest.TabIndex = 1;
-            this.rdoExGuest.TabStop = true;
-            this.rdoExGuest.Text = "Existing Guest";
-            this.rdoExGuest.UseVisualStyleBackColor = true;
+            this.addNewGuestToolStripMenuItem.Name = "addNewGuestToolStripMenuItem";
+            this.addNewGuestToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.addNewGuestToolStripMenuItem.Text = "Add New Guest";
+            this.addNewGuestToolStripMenuItem.Click += new System.EventHandler(this.addNewGuestToolStripMenuItem_Click);
             // 
-            // btnSubmit
+            // changeGuestDetailsToolStripMenuItem
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(336, 442);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(163, 72);
-            this.btnSubmit.TabIndex = 3;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.changeGuestDetailsToolStripMenuItem.Name = "changeGuestDetailsToolStripMenuItem";
+            this.changeGuestDetailsToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.changeGuestDetailsToolStripMenuItem.Text = "Change Guest Details";
+            this.changeGuestDetailsToolStripMenuItem.Click += new System.EventHandler(this.changeGuestDetailsToolStripMenuItem_Click);
             // 
-            // btnMainRooms
+            // removeGuestsToolStripMenuItem
             // 
-            this.btnMainRooms.Location = new System.Drawing.Point(36, 442);
-            this.btnMainRooms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMainRooms.Name = "btnMainRooms";
-            this.btnMainRooms.Size = new System.Drawing.Size(156, 72);
-            this.btnMainRooms.TabIndex = 4;
-            this.btnMainRooms.Text = "Maintain Rooms";
-            this.btnMainRooms.UseVisualStyleBackColor = true;
-            this.btnMainRooms.Click += new System.EventHandler(this.btnMainRooms_Click);
+            this.removeGuestsToolStripMenuItem.Name = "removeGuestsToolStripMenuItem";
+            this.removeGuestsToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.removeGuestsToolStripMenuItem.Text = "Remove Guests";
+            this.removeGuestsToolStripMenuItem.Click += new System.EventHandler(this.removeGuestsToolStripMenuItem_Click);
+            // 
+            // makeABookingToolStripMenuItem1
+            // 
+            this.makeABookingToolStripMenuItem1.Name = "makeABookingToolStripMenuItem1";
+            this.makeABookingToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.makeABookingToolStripMenuItem1.Text = "Make a Booking";
+            this.makeABookingToolStripMenuItem1.Click += new System.EventHandler(this.makeABookingToolStripMenuItem1_Click);
+            // 
+            // checkInToolStripMenuItem
+            // 
+            this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.checkInToolStripMenuItem.Text = "Check In";
+            this.checkInToolStripMenuItem.Click += new System.EventHandler(this.checkInToolStripMenuItem_Click);
+            // 
+            // checkOutToolStripMenuItem
+            // 
+            this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.checkOutToolStripMenuItem.Text = "Check Out";
+            this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
+            // 
+            // cancelABookingToolStripMenuItem
+            // 
+            this.cancelABookingToolStripMenuItem.Name = "cancelABookingToolStripMenuItem";
+            this.cancelABookingToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cancelABookingToolStripMenuItem.Text = "Cancel a Booking";
+            this.cancelABookingToolStripMenuItem.Click += new System.EventHandler(this.cancelABookingToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // FormNewExisting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 544);
-            this.Controls.Add(this.btnMainRooms);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.existingGB);
-            this.Controls.Add(this.rdoExGuest);
-            this.Controls.Add(this.rdoNewGuest);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ClientSize = new System.Drawing.Size(941, 681);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormNewExisting";
             this.Text = "Form Accessor";
-            this.existingGB.ResumeLayout(false);
-            this.existingGB.PerformLayout();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormNewExisting_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox existingGB;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox cbChangeGuestInfo;
-        private System.Windows.Forms.CheckBox cbBookings;
-        private System.Windows.Forms.RadioButton rdoNewGuest;
-        private System.Windows.Forms.RadioButton rdoExGuest;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnMainRooms;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem makeABookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maintainGuestsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maintainRoomsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem makeABookingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem checkInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelABookingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewGuestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeGuestDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeGuestsToolStripMenuItem;
     }
 }
