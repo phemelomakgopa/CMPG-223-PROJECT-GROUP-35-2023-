@@ -116,5 +116,29 @@ namespace CMPG_223_PROJECT_GROUP35
             removeGuestWindow.Show();
             removeGuestWindow.tabControl2.SelectedTab = removeGuestWindow.tabPage3;
         }
+
+        private void addRoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 addRoomWindow = new Form3();
+            addRoomWindow.MdiParent = this;
+            addRoomWindow.Show();
+            addRoomWindow.tabGuests.SelectedTab = addRoomWindow.tabPage1;
+        }
+
+        private void changeRoomDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 changeRoomWindow = new Form3();
+            changeRoomWindow.MdiParent = this;
+            changeRoomWindow.Show();
+            changeRoomWindow.tabGuests.SelectedTab = changeRoomWindow.tabPage2;
+        }
+
+        private void removeRoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 removeRoomWindow = new Form3();
+            removeRoomWindow.MdiParent = this;
+            removeRoomWindow.Show();
+            removeRoomWindow.tabGuests.SelectedTab = removeRoomWindow.tabPage3;
+        }
     }
 }

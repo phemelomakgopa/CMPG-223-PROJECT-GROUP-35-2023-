@@ -38,8 +38,16 @@ namespace CMPG_223_PROJECT_GROUP35
                 frmLogIn.adap.SelectCommand = frmLogIn.comm;
                 frmLogIn.adap.Fill(frmLogIn.ds, "Rooms");
 
-                
-                
+                addedRooms.DataSource = frmLogIn.ds;
+                addedRooms.DataMember = "Rooms";
+
+                changedRooms.DataSource = frmLogIn.ds;
+                changedRooms.DataMember = "Rooms";
+
+                roomsDataGridView.DataSource = frmLogIn.ds;
+                roomsDataGridView.DataMember = "Rooms";
+
+
                 frmLogIn.conn.Close();
             }
             catch(SqlException ex)
@@ -104,22 +112,34 @@ namespace CMPG_223_PROJECT_GROUP35
         private void btnRemoveRoom_Click(object sender, EventArgs e)
         {
             try
-            {            
-                if(frmLogIn.conn.State == ConnectionState.Closed)
+            {   
+                
+                if(string.IsNullOrEmpty(deleteRoom.Text))
                 {
-                    frmLogIn.conn.Open();
+                    MessageBox.Show("Please enter room id");
+                }
+                else
+                {
+                    if (frmLogIn.conn.State == ConnectionState.Closed)
+                    {
+                        frmLogIn.conn.Open();
+                    }
+
+                    string removeRoom = "DELETE FROM Rooms WHERE Room_ID = '" + deleteRoom.Text + "'";
+
+                    frmLogIn.comm = new SqlCommand(removeRoom, frmLogIn.conn);
+                    frmLogIn.adap = new SqlDataAdapter();
+                    frmLogIn.adap.DeleteCommand = frmLogIn.comm;
+                    frmLogIn.adap.DeleteCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Room is succesfully removed.");
+
+                    deleteRoom.Text = " ";
+
+                    displayRooms();
                 }
 
-                string removeRoom = "DELETE FROM Rooms WHERE Room_ID = '" + deleteRoom.Text + "'";
-
-                frmLogIn.comm = new SqlCommand(removeRoom,frmLogIn.conn);
-                frmLogIn.adap = new SqlDataAdapter();
-                frmLogIn.adap.DeleteCommand = frmLogIn.comm;
-                frmLogIn.adap.DeleteCommand.ExecuteNonQuery();
-
-                MessageBox.Show("Room is succesfully removed.");
-
-                displayRooms();
+                
             }
             catch(Exception ex)
             {
@@ -131,20 +151,19 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                if (frmLogIn.conn.State == ConnectionState.Closed)
-                {
-                    frmLogIn.conn.Open();
-                }
+                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+
+                //frmLogIn.conn.Open();
+               // int RoomCapacity = ;
+
 
                 if (txtRoomIDRemove.Text != "")
                 {
                     int RoomID = int.Parse(txtRoomIDRemove.Text);
-                    int RoomCapacity = int.Parse(cmbUpdateCapacity.Text);
                     
-                    if (cbRoomType.Checked)
+                    if (cbRoomType.Checked == true)
                     {
-                        lblRoomType.Enabled = true;
-                        txtUpdateType.Enabled = true;
+                        frmLogIn.conn.Open();
 
                         string update = $"UPDATE Rooms SET Room_Type = @roomType WHERE Room_ID = @roomID";
                         
@@ -155,10 +174,9 @@ namespace CMPG_223_PROJECT_GROUP35
                         frmLogIn.conn.Close();
                         
                     }
-                    if (cbUpdatePrice.Checked)
+                    if (cbUpdatePrice.Checked == true)
                     {
-                        lblRoomPrice.Enabled = true;
-                        txtUpdatePrice.Enabled = true;
+                        frmLogIn.conn.Open();
                         string update = "UPDATE Rooms SET Room_Price = @roomPrice WHERE Room_ID = @roomID";
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
                         frmLogIn.comm.Parameters.AddWithValue("@roomPrice", txtUpdatePrice.Text);
@@ -166,11 +184,10 @@ namespace CMPG_223_PROJECT_GROUP35
                         frmLogIn.comm.ExecuteNonQuery();
                         frmLogIn.conn.Close();
                     }
-                    if (cbUpdateDescr.Checked)
+                    if (cbUpdateDescr.Checked == true)
                     {
-                        lblDescr.Enabled = true;
-                        txtUpdateDescr.Enabled = true;
 
+                        frmLogIn.conn.Open();
                         string update = "UPDATE Rooms SET Description = @descr WHERE Room_ID = @roomID";
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
                         frmLogIn.comm.Parameters.AddWithValue("@descr", txtUpdateDescr.Text);
@@ -178,13 +195,12 @@ namespace CMPG_223_PROJECT_GROUP35
                         frmLogIn.comm.ExecuteNonQuery();
                         frmLogIn.conn.Close();
                     }
-                    if (cbUpdateCapacity.Checked)
+                    if (cbUpdateCapacity.Checked == true)
                     {
-                        lblCapacity.Enabled = true;
-                        cmbUpdateCapacity.Enabled = true;
+                        frmLogIn.conn.Open();
                         string update = "UPDATE Rooms SET Room_Capacity = @capacity WHERE Room_ID = @roomID";
                         frmLogIn.comm = new SqlCommand(update, frmLogIn.conn);
-                        frmLogIn.comm.Parameters.AddWithValue("@capacity", RoomCapacity);
+                        frmLogIn.comm.Parameters.AddWithValue("@capacity", int.Parse(cmbUpdateCapacity.SelectedItem.ToString()));
                         frmLogIn.comm.Parameters.AddWithValue("@roomID", RoomID);
                         frmLogIn.comm.ExecuteNonQuery();
                         frmLogIn.conn.Close();
@@ -192,7 +208,7 @@ namespace CMPG_223_PROJECT_GROUP35
 
                     MessageBox.Show("Room details changed");
                     displayRooms();
-
+                 
                 }
                 else
                 {
@@ -204,6 +220,30 @@ namespace CMPG_223_PROJECT_GROUP35
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cbRoomType_CheckedChanged(object sender, EventArgs e)
+        {
+            lblRoomType.Enabled = true;
+            txtUpdateType.Enabled = true;
+        }
+
+        private void cbUpdatePrice_CheckedChanged(object sender, EventArgs e)
+        {
+            lblRoomPrice.Enabled = true;
+            txtUpdatePrice.Enabled = true;
+        }
+
+        private void cbUpdateDescr_CheckedChanged(object sender, EventArgs e)
+        {
+            lblDescr.Enabled = true;
+            txtUpdateDescr.Enabled = true;
+        }
+
+        private void cbUpdateCapacity_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCapacity.Enabled = true;
+            cmbUpdateCapacity.Enabled = true;
         }
     }
 

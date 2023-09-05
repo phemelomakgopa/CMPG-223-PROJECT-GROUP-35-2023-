@@ -16,11 +16,11 @@ namespace CMPG_223_PROJECT_GROUP35
     {
         public frmLogIn()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             cbShowPassword.Checked = true;
         }
 
-        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\legen\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf"";Integrated Security=True;Connect Timeout=30";
+        public string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\hp\Documents\GitHub\CMPG-223-PROJECT-GROUP-35-2023-\SQL Server Scripts For LEHLABILE HOTEL\SQL Server Scripts For LEHLABILE HOTEL\DATA\Lehlabile Hotel DB.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection conn;
         public SqlCommand comm;
         public SqlCommand comm1;
@@ -34,39 +34,40 @@ namespace CMPG_223_PROJECT_GROUP35
         private void frmLogIn_Load(object sender, EventArgs e)
         {
             // Makes the form invisible when the form loads
-            lblError.Visible = false; 
+            lblError.Visible = false;
 
             //
             //cbShowPassword.Checked = true;
         }
-        
 
-        public string getReceptionistID()
+
+        public void getReceptionistID()
         {
-            string recepID = "";
-
             try
             {
+
                 conn = new SqlConnection(ConnectionString);
+
                 conn.Open();
 
-                string sql = "SELECT * FROM Receptionists WHERE Email_Address = '" + txtEmail.Text + "'";
-                comm = new SqlCommand(sql, conn);
+                string name = "SELECT * FROM Receptionists WHERE Email_Address = '" + txtEmail.Text + "'";
+                comm = new SqlCommand(name, conn);
                 reader = comm.ExecuteReader();
 
-                while(reader.Read())
+                while (reader.Read())
                 {
-                    recepID = reader.GetString(0).ToString();
+                    recID = reader.GetValue(0).ToString();
+
                 }
 
-                return recepID;
+
+                conn.Close();
+
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Oops! An error has occured!\n" + ex.Message);
+                MessageBox.Show("Oops! An error has occured\n" + ex.Message);
             }
-
-            return recepID;
         }
 
 
@@ -95,7 +96,7 @@ namespace CMPG_223_PROJECT_GROUP35
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Oops! An error has occurred...\n" +  ex.Message);
+                MessageBox.Show("Oops! An error has occurred...\n" + ex.Message);
             }
         }
 
@@ -105,10 +106,10 @@ namespace CMPG_223_PROJECT_GROUP35
             String username = txtEmail.Text.Trim();
             String password = txtPassword.Text.Trim();
 
-            
 
 
-           ///*
+
+            ///*
             if (username == "Manager1@lehlabilehotel.co.za")
             {
                 // Calling the isManager method to check whether it is the manager who is logging in
@@ -137,13 +138,13 @@ namespace CMPG_223_PROJECT_GROUP35
         private bool CheckAdminDetails(string username, string password)
         {
             conn = new SqlConnection(ConnectionString);
-            
+
             conn.Open(); // Open connection
 
             string sqlStatement = "SELECT COUNT(*) FROM Receptionists WHERE Email_Address = @Username AND Password = @Password";
 
             comm = new SqlCommand(sqlStatement, conn);
-                
+
             comm.Parameters.AddWithValue("@Username", username);
             comm.Parameters.AddWithValue("@Password", password);
 
@@ -151,7 +152,7 @@ namespace CMPG_223_PROJECT_GROUP35
 
             conn.Close();
 
-            return count > 0;               
+            return count > 0;
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -175,6 +176,32 @@ namespace CMPG_223_PROJECT_GROUP35
             // Make the sign up form appear
             FormSignUp signUpWindow = new FormSignUp();
             signUpWindow.ShowDialog();
+        }
+
+        public void displayReceiptionists()
+        {
+            try
+            {
+                conn = new SqlConnection(ConnectionString);
+                conn.Open();
+                string sql = "SELECT * FROM Receptionists";
+                comm = new SqlCommand(sql, conn);
+                reader = comm.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    Reports report = new Reports();
+                    report.lstReport.Items.Add("The following receiptionists were on duty for this booking report:"+"\n");
+                    report.lstReport.Items.Add(reader.GetValue(1) + "\t" +reader.GetValue(2)+"\t"+reader.GetValue(3)+"\t"+reader.GetValue(4)+"\n");
+                    report.lstReport.Items.Add("\n");
+                    report.lstReport.Items.Add("For any system inquiries, contact details are shown above");
+                }
+                conn.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -24,20 +24,45 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
-                frmLogIn.conn.Open();
-                string SQL = $"INSERT INTO Guests VALUES(@name,@surname,@email,@cellnumber)";
-                frmLogIn.comm = new SqlCommand(SQL, frmLogIn.conn);
+                if (string.IsNullOrEmpty(txtFnameAdd.Text))
+                {
+                    MessageBox.Show("Please enter your firstname");
+                }
+                else if (string.IsNullOrEmpty(txtLNameAdd.Text))
+                {
+                    MessageBox.Show("Please enter your lastname");
+                }
+                else if (string.IsNullOrEmpty(txtEmailAdd.Text))
+                {
+                    MessageBox.Show("Please enter your email address");
+                }
+                else if (string.IsNullOrEmpty(txtCellNumAdd.Text))
+                {
+                    MessageBox.Show("Please enter your cellphoene number");
+                }
+                else
+                {
+                    frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+                    frmLogIn.conn.Open();
+                    string SQL = $"INSERT INTO Guests VALUES(@name,@surname,@email,@cellnumber)";
+                    frmLogIn.comm = new SqlCommand(SQL, frmLogIn.conn);
 
-                frmLogIn.comm.Parameters.AddWithValue("@name", txtFnameAdd.Text);
-                frmLogIn.comm.Parameters.AddWithValue("@surname", txtLNameAdd.Text);
-                frmLogIn.comm.Parameters.AddWithValue("@email", txtEmailAdd.Text);
-                frmLogIn.comm.Parameters.AddWithValue("@cellnumber", txtCellNumAdd.Text);
+                    frmLogIn.comm.Parameters.AddWithValue("@name", txtFnameAdd.Text);
+                    frmLogIn.comm.Parameters.AddWithValue("@surname", txtLNameAdd.Text);
+                    frmLogIn.comm.Parameters.AddWithValue("@email", txtEmailAdd.Text);
+                    frmLogIn.comm.Parameters.AddWithValue("@cellnumber", txtCellNumAdd.Text);
 
-                frmLogIn.comm.ExecuteNonQuery();
-                frmLogIn.conn.Close();
+                    frmLogIn.comm.ExecuteNonQuery();
+                    frmLogIn.conn.Close();
 
-                MessageBox.Show("Guest successfully added");
+                    MessageBox.Show("Guest successfully added");
+
+                    txtFnameAdd.Text = " ";
+                    txtLNameAdd.Text = " ";
+                    txtEmailAdd.Text = " ";
+                    txtCellNumAdd.Text = " ";
+                }
+                
             }
             catch(Exception ex)
             {
@@ -101,6 +126,19 @@ namespace CMPG_223_PROJECT_GROUP35
 
                  frmLogIn.conn.Close();
                  MessageBox.Show("Details successfully changed.");
+
+                    //Clear textboxes and checkboxes
+                    txtUpdateSurname.Text = " ";
+                    txtUpdateEmail.Text = " ";
+                    txtUpdateEmail.Text = " ";
+                    txtUpdateNum.Text = " ";
+                    txtGuestID.Text = " ";
+
+                    cbUpdateEmail.Checked = false;
+                    cbUpdateNum.Checked = false;
+                    cbUpdateSurname.Checked = false;
+
+                   
 
                 }
                 else
@@ -237,21 +275,28 @@ namespace CMPG_223_PROJECT_GROUP35
         {
             try
             {
-                frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
-                frmLogIn.conn.Open();
-                int deleteGuest = int.Parse(txtSearchGuest.Text);
+                if(string.IsNullOrEmpty(txtSearchGuest.Text))
+                {
+                    MessageBox.Show("Please enter guest ID");
+                }
+                else
+                {
+                    frmLogIn.conn = new SqlConnection(frmLogIn.ConnectionString);
+                    frmLogIn.conn.Open();
+                    int deleteGuest = int.Parse(txtSearchGuest.Text);
 
-                string delete = "DELETE FROM Guests WHERE Guest_ID = '" + deleteGuest+ "'";
+                    string delete = "DELETE FROM Guests WHERE Guest_ID = '" + deleteGuest + "'";
 
-                frmLogIn.comm = new SqlCommand(delete, frmLogIn.conn);
-                frmLogIn.adap = new SqlDataAdapter();
-                frmLogIn.adap.DeleteCommand = frmLogIn.comm;
-                frmLogIn.adap.DeleteCommand.ExecuteNonQuery();
-                frmLogIn.conn.Close();
-             
-                MessageBox.Show("Guest is successfully removed from the system");
-                display();
+                    frmLogIn.comm = new SqlCommand(delete, frmLogIn.conn);
+                    frmLogIn.adap = new SqlDataAdapter();
+                    frmLogIn.adap.DeleteCommand = frmLogIn.comm;
+                    frmLogIn.adap.DeleteCommand.ExecuteNonQuery();
+                    frmLogIn.conn.Close();
 
+                    MessageBox.Show("Guest is successfully removed from the system");
+                    txtSearchGuest.Text = " ";
+                    display();
+                }
             }
             catch(SqlException ex)
             {
